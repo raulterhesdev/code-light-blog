@@ -1,0 +1,10 @@
+{
+  "development": {
+    "apiUrl": "https://raul-dev-blog-ghost-backend.herokuapp.com",
+    "contentApiKey": "b8897bdbf1b0cb10bbe45dcba5"
+  },
+  "production": {
+    "apiUrl": "https://raul-dev-blog-ghost-backend.herokuapp.com",
+    "contentApiKey": "b8897bdbf1b0cb10bbe45dcba5"
+  }
+}
