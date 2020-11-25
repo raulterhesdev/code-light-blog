@@ -138,12 +138,32 @@ module.exports = {
                             }
                         }
                     }
+                    allGhostPage {
+                        edges {
+                            node {
+                                id
+                                slug
+                                updated_at
+                                created_at
+                                feature_image
+                            }
+                        }
+                    }
                     allGhostTag {
                         edges {
                             node {
                                 id
                                 slug
                                 feature_image
+                            }
+                        }
+                    }
+                    allGhostAuthor {
+                        edges {
+                            node {
+                                id
+                                slug
+                                profile_image
                             }
                         }
                     }
@@ -154,6 +174,12 @@ module.exports = {
           },
           allGhostTag: {
             sitemap: `tags`,
+          },
+          allGhostAuthor: {
+            sitemap: `authors`,
+          },
+          allGhostPage: {
+            sitemap: `pages`,
           },
         },
         exclude: [
