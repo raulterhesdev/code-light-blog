@@ -1,35 +1,23 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-// import { Layout } from "../components/common"
-// import { MetaData } from "../components/common/meta"
+import MetaData from '../components/common/meta/MetaData';
+import Layout from '../components/Layout/Layout';
 
-/**
- * Single post view (/:slug)
- *
- * This file renders a single post and loads all the content.
- *
- */
 const Post = ({ data, location }) => {
-  const post = data.ghostPost
+  const post = data.ghostPost;
 
   return (
     <>
-      <div>hi post</div>
+      <MetaData data={data} location={location} type='article' />
+      <Layout>
+        <div>Post goes here</div>
+      </Layout>
     </>
-  )
+  );
   // return (
   //     <>
-  //         <MetaData
-  //             data={data}
-  //             location={location}
-  //             type="article"
-  //         />
-  //         <Helmet>
-  //             <style type="text/css">{`${post.codeinjection_styles}`}</style>
-  //         </Helmet>
   //         <Layout>
   //             <div className="container">
   //                 <article className="content">
@@ -51,7 +39,7 @@ const Post = ({ data, location }) => {
   //         </Layout>
   //     </>
   // )
-}
+};
 
 Post.propTypes = {
   data: PropTypes.shape({
@@ -63,9 +51,9 @@ Post.propTypes = {
     }).isRequired,
   }).isRequired,
   location: PropTypes.object.isRequired,
-}
+};
 
-export default Post
+export default Post;
 
 export const postQuery = graphql`
   query($slug: String!) {
@@ -73,4 +61,4 @@ export const postQuery = graphql`
       ...GhostPostFields
     }
   }
-`
+`;

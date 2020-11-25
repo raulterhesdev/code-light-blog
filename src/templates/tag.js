@@ -1,25 +1,33 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-// import { Layout, PostCard, Pagination } from "../components/common"
-// import { MetaData } from "../components/common/meta"
+import MetaData from '../components/common/meta/MetaData';
+import Layout from '../components/Layout/Layout';
+import Pagination from '../components/common/Pagination/Pagination';
 
-/**
- * Tag page (/tag/:slug)
- *
- * Loads all posts for the requested tag incl. pagination.
- *
- */
 const Tag = ({ data, location, pageContext }) => {
-  const tag = data.ghostTag
-  const posts = data.allGhostPost.edges
+  const tag = data.ghostTag;
+  const posts = data.allGhostPost.edges;
+
+  const postList = posts.map(({ node }) => (
+    // <PostCard key={node.id} post={node} />
+    // TODO: Replace with PostCard when creating it
+    <div key={node.id}>{node.title}</div>
+  ));
 
   return (
     <>
-      <div>Hi Tag</div>
+      <MetaData data={data} location={location} type='series' />
+      <Layout>
+        <header>
+          <h1>{tag.name}</h1>
+        </header>
+        <section>{postList}</section>
+        <Pagination pageContext={pageContext} />
+      </Layout>
     </>
-  )
+  );
   // return (
   //     <>
   //         <MetaData
@@ -44,7 +52,7 @@ const Tag = ({ data, location, pageContext }) => {
   //         </Layout>
   //     </>
   // )
-}
+};
 
 Tag.propTypes = {
   data: PropTypes.shape({
@@ -58,9 +66,9 @@ Tag.propTypes = {
     pathname: PropTypes.string.isRequired,
   }).isRequired,
   pageContext: PropTypes.object,
-}
+};
 
-export default Tag
+export default Tag;
 
 export const pageQuery = graphql`
   query GhostTagQuery($slug: String!, $limit: Int!, $skip: Int!) {
@@ -80,4 +88,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
