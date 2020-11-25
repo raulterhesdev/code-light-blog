@@ -5,14 +5,13 @@ import { graphql } from 'gatsby';
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
 import Pagination from '../components/common/Pagination/Pagination';
+import PostCard from '../components/PostCard/PostCard';
 
 const Index = ({ data, location, pageContext }) => {
   const posts = data.allGhostPost.edges;
 
   const postList = posts.map(({ node }) => (
-    // <PostCard key={node.id} post={node} />
-    // TODO: Replace with PostCard when creating it
-    <div key={node.id}>{node.title}</div>
+    <PostCard key={node.id} post={node} />
   ));
   return (
     <>
