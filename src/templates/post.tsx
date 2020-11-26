@@ -1,11 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
 
-const Post = ({ data, location }) => {
+type PostProps = {
+  data: {
+    ghostPost: {};
+  };
+  location: {};
+};
+
+const Post: React.FC<PostProps> = ({ data, location }) => {
   const post = data.ghostPost;
   console.log(post);
   return (
@@ -39,18 +45,6 @@ const Post = ({ data, location }) => {
   //         </Layout>
   //     </>
   // )
-};
-
-Post.propTypes = {
-  data: PropTypes.shape({
-    ghostPost: PropTypes.shape({
-      codeinjection_styles: PropTypes.object,
-      title: PropTypes.string.isRequired,
-      html: PropTypes.string.isRequired,
-      feature_image: PropTypes.string,
-    }).isRequired,
-  }).isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 export default Post;

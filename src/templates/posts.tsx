@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
@@ -7,7 +6,23 @@ import Layout from '../components/Layout/Layout';
 import Pagination from '../components/common/Pagination/Pagination';
 import PostCard from '../components/PostCard/PostCard';
 
-const Index = ({ data, location, pageContext }) => {
+type PostsProps = {
+  data: {
+    allGhostPost: {
+      edges: {
+        node: {
+          featured: boolean;
+          id: number;
+          title: string;
+        };
+      }[];
+    };
+  };
+  location: {};
+  pageContext: {};
+};
+
+const Posts: React.FC<PostsProps> = ({ data, location, pageContext }) => {
   const posts = data.allGhostPost.edges;
 
   const postList = posts.map(({ node }) => (
@@ -24,17 +39,7 @@ const Index = ({ data, location, pageContext }) => {
   );
 };
 
-Index.propTypes = {
-  data: PropTypes.shape({
-    allGhostPost: PropTypes.object.isRequired,
-  }).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
-  pageContext: PropTypes.object,
-};
-
-export default Index;
+export default Posts;
 
 // This page query loads all posts sorted descending by published date
 // The `limit` and `skip` values are used for pagination

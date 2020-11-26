@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
-const Layout = ({ children }) => {
+type LayoutTypes = {};
+
+const Layout: React.FC<LayoutTypes> = ({ children }) => {
   return (
     <div>
       <Header />
@@ -12,7 +13,5 @@ const Layout = ({ children }) => {
     </div>
   );
 };
-
-Layout.propTypes = {};
 
 export default Layout;

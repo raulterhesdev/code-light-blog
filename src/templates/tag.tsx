@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
@@ -7,7 +6,26 @@ import Layout from '../components/Layout/Layout';
 import Pagination from '../components/common/Pagination/Pagination';
 import PostCard from '../components/PostCard/PostCard';
 
-const Tag = ({ data, location, pageContext }) => {
+type TagProps = {
+  data: {
+    allGhostPost: {
+      edges: {
+        node: {
+          featured: boolean;
+          id: number;
+        };
+      }[];
+    };
+    ghostTag: {
+      name: string;
+      description: string;
+    };
+  };
+  location: {};
+  pageContext: {};
+};
+
+const Tag: React.FC<TagProps> = ({ data, location, pageContext }) => {
   const tag = data.ghostTag;
   const posts = data.allGhostPost.edges;
 
@@ -28,20 +46,6 @@ const Tag = ({ data, location, pageContext }) => {
       </Layout>
     </>
   );
-};
-
-Tag.propTypes = {
-  data: PropTypes.shape({
-    ghostTag: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      description: PropTypes.string,
-    }),
-    allGhostPost: PropTypes.object.isRequired,
-  }).isRequired,
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
-  pageContext: PropTypes.object,
 };
 
 export default Tag;

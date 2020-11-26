@@ -26,6 +26,10 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
+    ],
     'ghost/sort-imports-es6-autofix/sort-imports-es6': 'off',
     'ghost/ember/use-ember-get-and-set': 'off',
     'no-console': 'off',

@@ -1,10 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const PostCard = ({ post }) => {
+type PostCardProps = {
+  post: {
+    title: string;
+  };
+};
+const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return <div>{post.title}</div>;
 };
-
-PostCard.propTypes = {};
 
 export default PostCard;
