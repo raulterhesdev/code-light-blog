@@ -1,28 +1,31 @@
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 2018,
     ecmaFeatures: {
       jsx: true,
       experimentalObjectRestSpread: true,
     },
   },
-  plugins: ['ghost', 'react'],
+  plugins: ['ghost', 'react', '@typescript-eslint'],
   extends: [
     'plugin:ghost/node',
     'plugin:ghost/ember',
     'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   settings: {
     react: {
       createClass: 'createReactClass',
       pragma: 'React',
-      version: '16.0',
+      version: '17.0',
       flowVersion: '0.53',
     },
     propWrapperFunctions: ['forbidExtraProps'],
   },
   rules: {
+    'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     'ghost/sort-imports-es6-autofix/sort-imports-es6': 'off',
     'ghost/ember/use-ember-get-and-set': 'off',
     'no-console': 'off',
@@ -36,8 +39,7 @@ module.exports = {
       'as-needed',
       { requireReturnForObjectLiteral: true },
     ],
-    'jsx-quotes': ['error', 'prefer-double'],
-    semi: ['error', 'never'],
+    'jsx-quotes': ['error', 'backtick'],
     'object-curly-spacing': ['error', 'always'],
     'comma-dangle': [
       'error',

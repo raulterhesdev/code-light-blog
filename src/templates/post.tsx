@@ -7,7 +7,7 @@ import Layout from '../components/Layout/Layout';
 
 const Post = ({ data, location }) => {
   const post = data.ghostPost;
-
+  console.log(post);
   return (
     <>
       <MetaData data={data} location={location} type='article' />
