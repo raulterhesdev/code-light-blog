@@ -12,11 +12,12 @@ import { Location, Post, Tag } from '../../../types';
  */
 
 type MetaDataTypes = {
-  data: {
-    ghostPost: Post;
-    ghostTag: Tag;
+  data?: {
+    ghostPost?: Post;
+    ghostTag?: Tag;
   };
   location: Location;
+  type?: string;
 };
 
 const MetaData: React.FC<MetaDataTypes> = ({ data = {}, location }) => {
@@ -24,6 +25,7 @@ const MetaData: React.FC<MetaDataTypes> = ({ data = {}, location }) => {
   const { ghostPost, ghostTag } = data;
   let title: string;
   let description: string;
+  console.log(location);
 
   if (ghostPost) {
     return <ArticleMeta data={ghostPost} canonical={canonical} />;
