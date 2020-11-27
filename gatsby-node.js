@@ -43,6 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const indexTemplate = path.resolve(`./src/templates/index.tsx`);
   const postsTemplate = path.resolve(`./src/templates/posts.tsx`);
   const tagsTemplate = path.resolve(`./src/templates/tag.tsx`);
+  const allTagsTemplate = path.resolve(`./src/templates/tags.tsx`);
   const postTemplate = path.resolve(`./src/templates/post.tsx`);
 
   // Create tag pages
@@ -51,8 +52,8 @@ exports.createPages = async ({ graphql, actions }) => {
     const numberOfPages = Math.ceil(totalPosts / postsPerPage);
 
     // This part here defines, that our tag pages will use
-    // a `/tag/:slug/` permalink.
-    node.url = `/tag/${node.slug}/`;
+    // a `/tags/:slug/` permalink.
+    node.url = `/tags/${node.slug}/`;
 
     Array.from({ length: numberOfPages }).forEach((_, i) => {
       const currentPage = i + 1;
@@ -92,7 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
   posts.forEach(({ node }) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
-    node.url = `/${node.slug}/`;
+    node.url = `/posts/${node.slug}/`;
 
     createPage({
       path: node.url,
@@ -110,6 +111,12 @@ exports.createPages = async ({ graphql, actions }) => {
     path: '/',
     component: indexTemplate,
     items: posts,
+  });
+
+  createPage({
+    path: '/tags',
+    component: allTagsTemplate,
+    items: tags,
   });
 
   // Create pagination
