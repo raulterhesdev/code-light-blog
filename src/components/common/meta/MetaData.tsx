@@ -25,7 +25,6 @@ const MetaData: React.FC<MetaDataTypes> = ({ data = {}, location }) => {
   const { ghostPost, ghostTag } = data;
   let title: string;
   let description: string;
-  console.log(location);
 
   if (ghostPost) {
     return <ArticleMeta data={ghostPost} canonical={canonical} />;
