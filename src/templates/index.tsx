@@ -5,19 +5,18 @@ import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
 import PostCard from '../components/PostCard/PostCard';
 
+import { Post, Location, PageContext } from '../types';
+
 type IndexProps = {
   data: {
     allGhostPost: {
       edges: {
-        node: {
-          featured: boolean;
-          id: number;
-        };
+        node: Post;
       }[];
     };
   };
-  location: {};
-  pageContext: {};
+  location: Location;
+  pageContext: PageContext;
 };
 
 const Index: React.FC<IndexProps> = ({ data, location, pageContext }) => {

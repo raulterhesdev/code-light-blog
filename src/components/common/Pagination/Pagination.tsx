@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { PageContext } from '../../../types';
 
-const Pagination = ({ pageContext }) => {
+type PaginationType = {
+  pageContext: PageContext;
+};
+
+const Pagination: React.FC<PaginationType> = ({ pageContext }) => {
   const {
     previousPagePath,
     nextPagePath,
@@ -33,10 +37,6 @@ const Pagination = ({ pageContext }) => {
       </div>
     </nav>
   );
-};
-
-Pagination.propTypes = {
-  pageContext: PropTypes.object.isRequired,
 };
 
 export default Pagination;

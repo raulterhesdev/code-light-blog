@@ -1,10 +1,11 @@
 import React from 'react';
 
+import { Post } from '../../types';
+
 type PostCardProps = {
-  post: {
-    title: string;
-  };
+  post: Post;
 };
+
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return <div>{post.title}</div>;
 };

@@ -5,21 +5,18 @@ import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
 import Pagination from '../components/common/Pagination/Pagination';
 import PostCard from '../components/PostCard/PostCard';
+import { Post, Location, PageContext } from '../types';
 
 type PostsProps = {
   data: {
     allGhostPost: {
       edges: {
-        node: {
-          featured: boolean;
-          id: number;
-          title: string;
-        };
+        node: Post;
       }[];
     };
   };
-  location: {};
-  pageContext: {};
+  location: Location;
+  pageContext: PageContext;
 };
 
 const Posts: React.FC<PostsProps> = ({ data, location, pageContext }) => {

@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
+import { Post as PostType, Location } from '../types';
 
 type PostProps = {
   data: {
-    ghostPost: {};
+    ghostPost: PostType;
   };
-  location: {};
+  location: Location;
 };
 
 const Post: React.FC<PostProps> = ({ data, location }) => {

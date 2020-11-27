@@ -5,24 +5,19 @@ import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
 import Pagination from '../components/common/Pagination/Pagination';
 import PostCard from '../components/PostCard/PostCard';
+import { Location, PageContext, Post, Tag as TagType } from '../types';
 
 type TagProps = {
   data: {
     allGhostPost: {
       edges: {
-        node: {
-          featured: boolean;
-          id: number;
-        };
+        node: Post;
       }[];
     };
-    ghostTag: {
-      name: string;
-      description: string;
-    };
+    ghostTag: TagType;
   };
-  location: {};
-  pageContext: {};
+  location: Location;
+  pageContext: PageContext;
 };
 
 const Tag: React.FC<TagProps> = ({ data, location, pageContext }) => {
