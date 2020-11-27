@@ -15,11 +15,10 @@ type IndexProps = {
       }[];
     };
   };
-  location: Location;
-  pageContext: PageContext;
+  location?: Location;
 };
 
-const Index: React.FC<IndexProps> = ({ data, location, pageContext }) => {
+const Index: React.FC<IndexProps> = ({ data, location }) => {
   const posts = data.allGhostPost.edges;
   const postList = posts.map(({ node }) =>
     node.featured ? <PostCard key={node.id} post={node} /> : null
@@ -33,16 +32,6 @@ const Index: React.FC<IndexProps> = ({ data, location, pageContext }) => {
     </>
   );
 };
-
-// Index.propTypes = {
-//   data: PropTypes.shape({
-//     allGhostPost: PropTypes.object.isRequired,
-//   }).isRequired,
-//   location: PropTypes.shape({
-//     pathname: PropTypes.string.isRequired,
-//   }).isRequired,
-//   pageContext: PropTypes.object,
-// };
 
 export default Index;
 
