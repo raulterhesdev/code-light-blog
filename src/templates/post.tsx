@@ -19,33 +19,26 @@ const Post: React.FC<PostProps> = ({ data, location }) => {
     <>
       <MetaData data={data} location={location} type='article' />
       <Layout>
-        <div>Post goes here</div>
+        <div>
+          <article>
+            {post.feature_image ? (
+              <figure>
+                <img
+                  src={post.feature_image}
+                  alt={post.title}
+                  style={{ width: 250 }}
+                />
+              </figure>
+            ) : null}
+            <section>
+              <h1>{post.title}</h1>
+              <section dangerouslySetInnerHTML={{ __html: post.html }} />
+            </section>
+          </article>
+        </div>
       </Layout>
     </>
   );
-  // return (
-  //     <>
-  //         <Layout>
-  //             <div className="container">
-  //                 <article className="content">
-  //                     { post.feature_image ?
-  //                         <figure className="post-feature-image">
-  //                             <img src={ post.feature_image } alt={ post.title } />
-  //                         </figure> : null }
-  //                     <section className="post-full-content">
-  //                         <h1 className="content-title">{post.title}</h1>
-
-  //                         {/* The main post content */ }
-  //                         <section
-  //                             className="content-body load-external-scripts"
-  //                             dangerouslySetInnerHTML={{ __html: post.html }}
-  //                         />
-  //                     </section>
-  //                 </article>
-  //             </div>
-  //         </Layout>
-  //     </>
-  // )
 };
 
 export default Post;
