@@ -3,8 +3,7 @@ import { graphql } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
-import Pagination from '../components/common/Pagination/Pagination';
-import PostCard from '../components/PostCard/PostCard';
+import TagCard from '../components/TagCard/TagCard';
 import { Location, PageContext, Post, Tag as TagType } from '../types';
 
 type TagsProps = {
@@ -23,11 +22,15 @@ type TagsProps = {
 
 const Tags: React.FC<TagsProps> = ({ data, location }) => {
   console.log(data.allGhostTag);
+  const tagList = data.allGhostTag.edges.map(({ node }) => (
+    <TagCard key={node.name} name={node.name} slug={node.slug} />
+  ));
   return (
     <>
       <MetaData location={location} />
       <Layout>
-        <p>all tags</p>
+        <p>All tags</p>
+        {tagList}
       </Layout>
     </>
   );
