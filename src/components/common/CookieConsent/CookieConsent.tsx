@@ -30,7 +30,7 @@ const CookieConsent: React.FC = () => {
     document.cookie = `${cookieName}=true`;
   };
 
-  const refuzeCookie = () => {
+  const refuseCookie = () => {
     document.cookie = `${cookieName}=false`;
   };
 
@@ -50,7 +50,7 @@ const CookieConsent: React.FC = () => {
             !
           </p>
           <button onClick={acceptCookies}>Accept</button>
-          <button onClick={refuzeCookie}>Decline</button>
+          <button onClick={refuseCookie}>Decline</button>
         </div>
       )}
     </>
