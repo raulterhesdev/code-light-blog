@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import CookieConsent from '../common/CookieConsent/CookieConsent';
 
 import { AllPagesEnum } from '../../types/AllPagesEnum';
 
@@ -10,6 +11,7 @@ type LayoutTypes = { page?: AllPagesEnum };
 const Layout: React.FC<LayoutTypes> = ({ children, page }) => {
   return (
     <>
+      <CookieConsent />
       <Header />
       <main style={{ display: 'flex' }}>
         <div>{children}</div>

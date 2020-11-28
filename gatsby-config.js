@@ -52,37 +52,28 @@ module.exports = {
     /**
      *  Content Plugins
      */
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     // You can add multiple tracking ids and a pageview event will be fired for all of them.
-    //     trackingIds: [
-    //       "GA-TRACKING_ID", // Google Analytics / GA
-    //       "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-    //       "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-    //     ],
-    //   },
-    // },
     {
-      resolve: `gatsby-plugin-google-analytics-gdpr`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it.
-        trackingId: 'G-EW4RZ6L0Y',
-        // Optional parameter (default false) - Enable analytics in development mode.
-        enableDevelopment: true, // default false
-        // Optional parameter (default true) - Some countries (such as Germany) require you to use the _anonymizeIP function for Google Analytics. Otherwise you are not allowed to use it.
-        anonymizeIP: true,
-        // Optional parameter (default false) - Starts google analytics with cookies enabled. In some countries (such as Germany) this is not allowed.
-        autoStartWithCookiesEnabled: false,
-        // Optional parameter - Configuration for react-ga and google analytics
-        reactGaOptions: {
-          debug: true,
-          gaOptions: {
-            sampleRate: 100,
-          },
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          'G-EW4RZ6L0Y', // Google Analytics / GA
+        ],
+        gtagConfig: {
+          optimize_id: 'OPT_CONTAINER_ID',
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+          // Setting this parameter is also optional
+          respectDNT: true,
         },
       },
     },
+
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
