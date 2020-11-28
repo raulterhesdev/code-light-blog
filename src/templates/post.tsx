@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
@@ -19,23 +19,21 @@ const Post: React.FC<PostProps> = ({ data, location }) => {
     <>
       <MetaData data={data} location={location} type='article' />
       <Layout>
-        <div>
-          <article>
-            {post.feature_image ? (
-              <figure>
-                <img
-                  src={post.feature_image}
-                  alt={post.title}
-                  style={{ width: 250 }}
-                />
-              </figure>
-            ) : null}
-            <section>
-              <h1>{post.title}</h1>
-              <section dangerouslySetInnerHTML={{ __html: post.html }} />
-            </section>
-          </article>
-        </div>
+        <article>
+          {post.feature_image ? (
+            <figure>
+              <img
+                src={post.feature_image}
+                alt={post.title}
+                style={{ width: 250 }}
+              />
+            </figure>
+          ) : null}
+          <section>
+            <h1>{post.title}</h1>
+            <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          </section>
+        </article>
       </Layout>
     </>
   );

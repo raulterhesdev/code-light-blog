@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
@@ -31,13 +31,16 @@ const Tag: React.FC<TagProps> = ({ data, location, pageContext }) => {
   return (
     <>
       <MetaData data={data} location={location} type='series' />
+
       <Layout>
-        <header>
-          <h1>{tag.name}</h1>
-          {tag.description ? <p>{tag.description}</p> : null}
-        </header>
-        <section>{postList}</section>
-        <Pagination pageContext={pageContext} />
+        <section>
+          <header>
+            <h1>{tag.name}</h1>
+            {tag.description ? <p>{tag.description}</p> : null}
+          </header>
+          {postList}
+          <Pagination pageContext={pageContext} />
+        </section>
       </Layout>
     </>
   );

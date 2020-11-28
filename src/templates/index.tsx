@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
@@ -22,8 +22,10 @@ type IndexProps = {
 
 const Index: React.FC<IndexProps> = ({ data, location }) => {
   const posts = data.allGhostPost.edges;
+
   const featuredPosts: React.ReactNode[] = [];
   const latestsPosts: React.ReactNode[] = [];
+
   posts.map(({ node }, index) => {
     if (index < siteConfig.latestPosts) {
       latestsPosts.push(<PostCard key={node.id} post={node} />);
@@ -35,24 +37,23 @@ const Index: React.FC<IndexProps> = ({ data, location }) => {
     }
   });
 
-  console.log(posts);
   return (
     <>
       <MetaData location={location} />
       <Layout>
-        <div style={{ display: 'flex' }}>
+        <>
           <section>
             <h2>Latest posts</h2>
             {latestsPosts}
-            {featuredPosts.length > 0 && (
-              <>
-                <h2>Other posts you might be interested in</h2>
-                {featuredPosts}
-              </>
-            )}
+            <Link to='/posts'>Check out all our posts!</Link>
           </section>
-          <aside>Sidebar goes here</aside>
-        </div>
+          {featuredPosts.length > 0 && (
+            <section>
+              <h2>Other posts you might be interested in</h2>
+              {featuredPosts}
+            </section>
+          )}
+        </>
       </Layout>
     </>
   );

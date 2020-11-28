@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
@@ -28,9 +28,12 @@ const Tags: React.FC<TagsProps> = ({ data, location }) => {
   return (
     <>
       <MetaData location={location} />
+
       <Layout>
-        <p>All tags</p>
-        {tagList}
+        <section>
+          <h2>All tags</h2>
+          {tagList}
+        </section>
       </Layout>
     </>
   );

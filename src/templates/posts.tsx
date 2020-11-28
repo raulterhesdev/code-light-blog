@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
@@ -29,8 +29,11 @@ const Posts: React.FC<PostsProps> = ({ data, location, pageContext }) => {
     <>
       <MetaData location={location} />
       <Layout>
-        <section>{postList}</section>
-        <Pagination pageContext={pageContext} />
+        <section>
+          <h1>Posts</h1>
+          {postList}
+          <Pagination pageContext={pageContext} />
+        </section>
       </Layout>
     </>
   );
