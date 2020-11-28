@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -11,6 +12,13 @@ type LayoutTypes = { page?: AllPagesEnum };
 const Layout: React.FC<LayoutTypes> = ({ children, page }) => {
   return (
     <>
+      <Helmet>
+        <script
+          data-ad-client='ca-pub-7374604984496320'
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+        ></script>
+      </Helmet>
       <CookieConsent />
       <Header />
       <main style={{ display: 'flex' }}>
