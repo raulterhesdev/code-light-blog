@@ -64,23 +64,53 @@ module.exports = {
     //   },
     // },
     {
+      resolve: `gatsby-plugin-google-analytics-gdpr`,
+      options: {
+        // The property ID; the tracking code won't be generated without it.
+        trackingId: 'G-EW4RZ6L0Y',
+        // Optional parameter (default false) - Enable analytics in development mode.
+        enableDevelopment: true, // default false
+        // Optional parameter (default true) - Some countries (such as Germany) require you to use the _anonymizeIP function for Google Analytics. Otherwise you are not allowed to use it.
+        anonymizeIP: true,
+        // Optional parameter (default false) - Starts google analytics with cookies enabled. In some countries (such as Germany) this is not allowed.
+        autoStartWithCookiesEnabled: false,
+        // Optional parameter - Configuration for react-ga and google analytics
+        reactGaOptions: {
+          debug: true,
+          gaOptions: {
+            sampleRate: 10,
+          },
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-cookiehub-banner`,
+      options: {
+        // The ID is part of the CookieHub URL: https://cookiehub.net/cc/YOUR_COOKIEHUB_ID.js
+        cookieHubId: '591be63b',
+        // Optional parameter (default false) - Use new v2 API.
+        cookieHubV2Api: false,
+        // Categories configured with CookieHub
+        categories: [
+          {
+            categoryName: 'analytics', // Unique id of the category which is set by Cookiehub.
+            cookieName: 'gatsby-plugin-google-analytics-gdpr_cookies-enabled', // Your custom cookie name
+          },
+          {
+            categoryName: 'marketing',
+            cookieName: 'marketing-enabled',
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
         endpoint:
           'https://gmail.us7.list-manage.com/subscribe/post?u=05fbc8f9a7c14e8f58a1cfed4&amp;id=424ae0a4c1',
       },
     },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: [
-          'G-EW4RZ6L0YM', // Google Analytics / GA
-          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
-        ],
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
