@@ -1,7 +1,5 @@
 import React from 'react';
 
-//const gaCookie = 'gatsby-plugin-google-analytics-gdpr_cookies-enabled';
-
 // const checkCookieName = (name: string): string => {
 //   var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
 //   if (match) {
@@ -12,11 +10,50 @@ import React from 'react';
 // };
 
 const CookieConsent: React.FC = () => {
+  // check if this cookie exists ga-disable-G-EW4RZ6L0YM
+  // if not display the banner and ask the user to agree
+  // find some link to cookie policy to display
+  const cookieName = 'ga-disable-G-EW4RZ6L0YM';
+
+  const checkCookieName = (name: string): string => {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) {
+      return match[2];
+    } else {
+      console.log('--something went wrong---');
+    }
+  };
+
+  const shouldDisplayCookieBanner = checkCookieName(cookieName);
+
+  const acceptCookies = () => {
+    document.cookie = `${cookieName}=true`;
+  };
+
+  const refuzeCookie = () => {
+    document.cookie = `${cookieName}=false`;
+  };
+
   return (
-    <div>
-      CookieConsent
-      <a href='javascript:gaOptout();'>Deactive Google Tracking</a>
-    </div>
+    <>
+      {!shouldDisplayCookieBanner && (
+        <div>
+          <p>
+            We use cookies to optimize content for this website. Check our
+            <a
+              href='https://www.privacypolicygenerator.info/live.php?token=fmI710Fh4qMnzbhFRcHsinGLOhNXT60G'
+              rel='noopener'
+              target='_blank'
+            >
+              Privacy Policy
+            </a>
+            !
+          </p>
+          <button onClick={acceptCookies}>Accept</button>
+          <button onClick={refuzeCookie}>Decline</button>
+        </div>
+      )}
+    </>
   );
 };
 
