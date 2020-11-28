@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 const Footer: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState<string>(null);
 
-  const subscribe = (e) => {
+  const subscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Validate and Submit Form here');
   };
@@ -16,14 +17,19 @@ const Footer: React.FC = () => {
         <input
           type='text'
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e: React.FormEvent<HTMLInputElement>) =>
+            setName(e.currentTarget.value)
+          }
         />
         <label htmlFor='email'>Email:</label>
         <input
-          type='text'
+          type='email'
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e: React.FormEvent<HTMLInputElement>) =>
+            setEmail(e.currentTarget.value)
+          }
         />
+        {error ? <p>{error}</p> : null}
         <button type='submit'>Subscribe to newsletter!</button>
       </form>
     </footer>
