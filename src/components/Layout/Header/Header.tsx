@@ -1,11 +1,12 @@
 import React from 'react';
 import Navigation from './Navigation/Navigation';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
-    <div>
+    <header style={{ display: 'flex' }}>
+      <span>Logo</span>
       <Navigation />
-    </div>
+    </header>
   );
 };
 

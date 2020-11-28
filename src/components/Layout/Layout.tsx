@@ -6,11 +6,11 @@ type LayoutTypes = {};
 
 const Layout: React.FC<LayoutTypes> = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
       <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
 
