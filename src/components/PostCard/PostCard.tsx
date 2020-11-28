@@ -10,10 +10,10 @@ type PostCardProps = {
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const { title, slug } = post;
   return (
-    <div>
+    <article>
       <span>{title}</span>
       <Link to={`/posts/${slug}`}>Go To</Link>
-    </div>
+    </article>
   );
 };
 
