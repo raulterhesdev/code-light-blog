@@ -4,7 +4,7 @@ import Navigation from './Navigation/Navigation';
 const Header: React.FC = () => {
   return (
     <header style={{ display: 'flex' }}>
-      <span>Logo</span>
+      <span>&lt;code-light /&gt;</span>
       <Navigation />
     </header>
   );
