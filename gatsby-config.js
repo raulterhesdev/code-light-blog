@@ -1,29 +1,29 @@
-const path = require(`path`)
+const path = require(`path`);
 
-const config = require(`./src/utils/siteConfig`)
-const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
+const config = require(`./src/utils/siteConfig`);
+const generateRSSFeed = require(`./src/utils/rss/generate-feed`);
 
-let ghostConfig
+let ghostConfig;
 
 try {
-  ghostConfig = require(`./.ghost`)
+  ghostConfig = require(`./.ghost`);
 } catch (e) {
   ghostConfig = {
     production: {
       apiUrl: process.env.GHOST_API_URL,
       contentApiKey: process.env.GHOST_CONTENT_API_KEY,
     },
-  }
+  };
 } finally {
   const { apiUrl, contentApiKey } =
     process.env.NODE_ENV === `development`
       ? ghostConfig.development
-      : ghostConfig.production
+      : ghostConfig.production;
 
   if (!apiUrl || !contentApiKey || contentApiKey.match(/<key>/)) {
     throw new Error(
       `GHOST_API_URL and GHOST_CONTENT_API_KEY are required to build. Check the README.`
-    ) // eslint-disable-line
+    ); // eslint-disable-line
   }
 }
 
@@ -34,7 +34,7 @@ if (
 ) {
   throw new Error(
     `siteUrl can't be localhost and needs to be configured in siteConfig. Check the README.`
-  ) // eslint-disable-line
+  ); // eslint-disable-line
 }
 
 /**
@@ -52,6 +52,24 @@ module.exports = {
     /**
      *  Content Plugins
      */
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     // You can add multiple tracking ids and a pageview event will be fired for all of them.
+    //     trackingIds: [
+    //       "GA-TRACKING_ID", // Google Analytics / GA
+    //       "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+    //       "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+    //     ],
+    //   },
+    // },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://gmail.us7.list-manage.com/subscribe/post?u=05fbc8f9a7c14e8f58a1cfed4&amp;id=424ae0a4c1',
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -197,4 +215,4 @@ module.exports = {
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-offline`,
   ],
-}
+};
