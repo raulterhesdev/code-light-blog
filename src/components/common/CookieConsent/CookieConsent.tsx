@@ -39,15 +39,15 @@ const CookieConsent: React.FC = () => {
       {!shouldDisplayCookieBanner && (
         <div>
           <p>
-            We use cookies to optimize content for this website. Check our
+          We use cookies to offer you our service. By continuing to use this site you consent to our use of cookies as described in our 
             <a
               href='https://www.privacypolicygenerator.info/live.php?token=fmI710Fh4qMnzbhFRcHsinGLOhNXT60G'
               rel='noopener'
               target='_blank'
             >
-              Privacy Policy
+              policy
             </a>
-            !
+            .
           </p>
           <button onClick={acceptCookies}>Accept</button>
           <button onClick={refuseCookie}>Decline</button>
