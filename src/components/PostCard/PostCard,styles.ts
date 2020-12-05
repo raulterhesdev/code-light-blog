@@ -33,6 +33,7 @@ export const Title = styled.h1`
 
 export const ImageWrapper = styled.figure`
   width: 100%;
+  margin-bottom: 8px;
 `;
 
 export const Image = styled.img`

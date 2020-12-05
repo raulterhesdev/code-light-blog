@@ -30,6 +30,7 @@ export const Title = styled.h1`
 export const ImageWrapper = styled.figure`
   width: 100%;
   max-width: 800px;
+  margin-bottom: 8px;
 `;
 
 export const Image = styled.img`
