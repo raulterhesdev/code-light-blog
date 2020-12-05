@@ -8,11 +8,11 @@ const StyledCTA = styled.span`
     text-decoration: none;
     font-size: 1.2rem;
     color: ${({ theme }) => theme.white};
-    background-color: ${({ theme }) => theme.primary};
+    background-color: ${({ theme }) => theme.primaryLight};
     box-shadow: 0 4px 8px #00000029;
 
     &:hover {
-      background-color: ${({ theme }) => theme.primaryDark};
+      background-color: ${({ theme }) => theme.primary};
     }
 
     &:active {
