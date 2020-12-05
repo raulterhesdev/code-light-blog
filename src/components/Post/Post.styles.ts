@@ -21,7 +21,7 @@ export const MainSection = styled.section`
   flex-direction: column;
   width: 100%;
   max-width: 1000px;
-  padding: 16px 8px;
+  padding: 16px 12px;
 
   @media (max-width: 900px) {
     width: 100%;
@@ -86,7 +86,7 @@ export const ArticleBody = styled.section`
   }
 
   p {
-    padding: 6px 3px;
+    padding: 6px 8px;
     font-size: 1rem;
   }
 
