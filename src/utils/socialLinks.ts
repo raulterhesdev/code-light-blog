@@ -2,21 +2,21 @@ export default [
   {
     name: 'Facebook',
     icon: '',
-    to: 'www.facebook.com',
+    to: 'https://facebook.com',
   },
   {
     name: 'Github',
     icon: '',
-    to: 'www.github.com',
+    to: 'https://github.com',
   },
   {
     name: 'Twitter',
     icon: '',
-    to: 'www.twitter.com',
+    to: 'https://twitter.com',
   },
   {
     name: 'YouTube',
     icon: '',
-    to: 'www.youtube.com',
+    to: 'https://youtube.com',
   },
 ];
