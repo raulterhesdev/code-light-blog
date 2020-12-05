@@ -149,6 +149,9 @@ export const ArticleBody = styled.section`
   }
 
   figure.kg-embed-card {
+    iframe {
+      max-width: 100vw;
+    }
   }
 
   pre {
