@@ -4,7 +4,7 @@ module.exports = {
   featuredPosts: 6,
   latestPosts: 1,
   siteTitleMeta: `Code Light`, // This allows an alternative site title for meta data for pages.
-  siteDescriptionMeta: `Code Tutorials`, // This allows an alternative site description for meta data for pages.
+  siteDescriptionMeta: `Code articles, tutorials, blog posts and more!`, // This allows an alternative site description for meta data for pages.
 
   shareImageWidth: 1000, // Change to the width of your default share image
   shareImageHeight: 523, // Change to the height of your default share image
