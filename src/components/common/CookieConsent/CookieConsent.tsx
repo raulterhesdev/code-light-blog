@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -45,6 +45,9 @@ const DeclineButton = styled.button`
 `;
 
 const CookieConsent: React.FC = () => {
+  const [shouldDisplayCookieBanner, setShouldDisplayCookieBanner] = useState(
+    false
+  );
   const cookieName = 'ga-disable-G-EW4RZ6L0YM';
 
   const checkCookieName = (name: string): string => {
@@ -54,10 +57,9 @@ const CookieConsent: React.FC = () => {
           new RegExp('(^| )' + name + '=([^;]+)')
         );
         if (match) {
-          console.log(match[2]);
-          return match[2];
+          setShouldDisplayCookieBanner(false);
         } else {
-          console.log('--something went wrong---');
+          setShouldDisplayCookieBanner(true);
         }
       } else {
         return;
@@ -65,21 +67,23 @@ const CookieConsent: React.FC = () => {
     }
   };
 
-  let shouldDisplayCookieBanner: any = checkCookieName(cookieName);
+  useEffect(() => {
+    checkCookieName(cookieName);
+  }, []);
 
   const acceptCookies = () => {
     document.cookie = `${cookieName}=false`;
-    shouldDisplayCookieBanner = false;
+    setShouldDisplayCookieBanner(false);
   };
 
   const refuseCookie = () => {
     document.cookie = `${cookieName}=true`;
-    shouldDisplayCookieBanner = false;
+    setShouldDisplayCookieBanner(false);
   };
 
   return (
     <>
-      {!shouldDisplayCookieBanner && (
+      {shouldDisplayCookieBanner && (
         <Wrapper>
           <p>
             This website would like to use cookies to analytics purposes. Your
