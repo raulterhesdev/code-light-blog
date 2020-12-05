@@ -29,8 +29,13 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
     <>
       <SectionHeader>Latest post</SectionHeader>
       {latestsPost}
-      <SectionHeader>Other posts you might be interested in</SectionHeader>
-      {featuredPosts.length > 0 && <Section>{featuredPosts}</Section>}
+
+      {featuredPosts.length > 0 && (
+        <>
+          <SectionHeader>Other posts you might be interested in</SectionHeader>
+          <Section>{featuredPosts}</Section>
+        </>
+      )}
     </>
   );
 };
