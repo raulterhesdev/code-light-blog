@@ -156,6 +156,8 @@ export const ArticleBody = styled.section`
     color: ${({ theme }) => theme.white};
     padding: 40px 8px 16px 8px;
     position: relative;
+    overflow-x: auto;
+
     code {
     }
 
