@@ -42,7 +42,8 @@ export const TagWrapper = styled.div`
 `;
 
 export const ArticleBody = styled.section`
-  line-height: 1.4;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
   h2 {
     font-size: 1.7rem;
     padding: 4px 8px;
