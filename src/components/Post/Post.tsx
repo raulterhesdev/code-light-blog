@@ -1,0 +1,86 @@
+import React, { useEffect } from 'react';
+import { Post as PostType } from '../../types';
+import Tag from '../Tag/Tag';
+
+import {
+  Article,
+  Image,
+  ImageWrapper,
+  MainSection,
+  Title,
+  ArticleBody,
+  Date,
+  TagWrapper,
+} from './Post.styles';
+
+type PostProps = {
+  post: PostType;
+};
+
+const Post: React.FC<PostProps> = ({ post }) => {
+  useEffect(() => {
+    const articleLinks = document.querySelectorAll('#main-article a');
+    articleLinks.forEach((link) => {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+  }, []);
+
+  useEffect(() => {
+    const codeBlocks = document.querySelectorAll('#main-article pre');
+
+    const copyTextToClipboard = (e) => {
+      var text = e.target.nextSibling.innerText;
+      var elem = document.createElement('textarea');
+      document.body.appendChild(elem);
+      elem.value = text;
+      elem.select();
+      document.execCommand('copy');
+      document.body.removeChild(elem);
+    };
+
+    codeBlocks.forEach((block) => {
+      const language = block.lastChild.classList[0].split('-')[1];
+
+      const copyButton = document.createElement('span');
+      copyButton.innerText = 'Copy';
+      copyButton.classList.add('copy-button');
+      copyButton.addEventListener('click', copyTextToClipboard);
+
+      const languageSign = document.createElement('span');
+      languageSign.innerText = language;
+      languageSign.classList.add('language-sign');
+
+      block.prepend(languageSign, copyButton);
+    });
+
+    return () => {
+      document.removeEventListener('click', copyTextToClipboard);
+    };
+  }, []);
+
+  return (
+    <Article>
+      {post.feature_image ? (
+        <ImageWrapper>
+          <Image src={post.feature_image} alt={post.title} />
+        </ImageWrapper>
+      ) : null}
+      <MainSection>
+        <Title>{post.title}</Title>
+        <Date>{post.created_at_pretty}</Date>
+        <TagWrapper>
+          {post.tags.map((tag) => (
+            <Tag key={tag.slug} tag={tag} />
+          ))}
+        </TagWrapper>
+        <ArticleBody
+          id='main-article'
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+      </MainSection>
+    </Article>
+  );
+};
+
+export default Post;

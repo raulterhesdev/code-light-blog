@@ -1,14 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'gatsby';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import CookieConsent from '../common/CookieConsent/CookieConsent';
 import { theme } from '../../utils/theme';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { AllPagesEnum } from '../../types/AllPagesEnum';
 
-type LayoutTypes = { page?: AllPagesEnum };
+import { Main, Container } from './Layout.styles';
+import { Location } from '../../types';
+
+type LayoutTypes = { location: Location };
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -23,9 +24,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout: React.FC<LayoutTypes> = ({ children, page }) => {
+const Layout: React.FC<LayoutTypes> = ({ children, location }) => {
+  const paths = location.pathname.split('/');
+  const currentPath = paths[1];
+
   return (
     <ThemeProvider theme={theme}>
+      {/* Head Tag scripts and links */}
       <Helmet>
         <script
           data-ad-client='ca-pub-7374604984496320'
@@ -36,24 +41,19 @@ const Layout: React.FC<LayoutTypes> = ({ children, page }) => {
         <link
           href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap'
           rel='stylesheet'
-        ></link>
+        />
       </Helmet>
+
       <GlobalStyle />
+
       <CookieConsent />
-      <Header />
-      <main style={{ display: 'flex' }}>
-        <div>{children}</div>
-        <aside>
-          {page !== AllPagesEnum.about && (
-            <div>
-              <h3>About me</h3>
-              <p>Short about me description</p>
-              <Link to='/about'>Find out more!</Link>
-            </div>
-          )}
-          <div>{/* adds go here */}</div>
-        </aside>
-      </main>
+
+      <Header currentPath={currentPath} />
+
+      <Main style={{ display: 'flex' }}>
+        <Container>{children}</Container>
+      </Main>
+
       <Footer />
     </ThemeProvider>
   );

@@ -6,6 +6,7 @@ import Layout from '../components/Layout/Layout';
 import Pagination from '../components/common/Pagination/Pagination';
 import PostCard from '../components/PostCard/PostCard';
 import { Location, PageContext, Post, Tag as TagType } from '../types';
+import { Section, SectionHeader } from '../components/Home/Home.styles';
 
 type TagProps = {
   data: {
@@ -32,15 +33,15 @@ const Tag: React.FC<TagProps> = ({ data, location, pageContext }) => {
     <>
       <MetaData data={data} location={location} type='series' />
 
-      <Layout>
-        <section>
-          <header>
-            <h1>{tag.name}</h1>
-            {tag.description ? <p>{tag.description}</p> : null}
-          </header>
+      <Layout location={location}>
+        <header>
+          <SectionHeader>{tag.name}</SectionHeader>
+          {tag.description ? <p>{tag.description}</p> : null}
+        </header>
+        <Section>
           {postList}
           <Pagination pageContext={pageContext} />
-        </section>
+        </Section>
       </Layout>
     </>
   );

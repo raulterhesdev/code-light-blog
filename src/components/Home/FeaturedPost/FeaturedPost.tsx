@@ -1,26 +1,29 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { Post } from '../../types';
+
+import { Post } from '../../../types';
+import Tag from '../../Tag/Tag';
+
 import {
   Article,
   Title,
   ImageWrapper,
   Image,
+  CtaWrapper,
   Container,
   Header,
   PublishedDate,
+  ShortText,
   TagWrapper,
-} from './PostCard,styles';
-import Tag from '../Tag/Tag';
-import { CtaWrapper } from '../Home/FeaturedPost/FeaturedPost.styles';
-import CTA from '../common/CTA/CTA';
+} from './FeaturedPost.styles';
+import CTA from '../../common/CTA/CTA';
 
-type PostCardProps = {
+type FeaturedPostProps = {
   post: Post;
 };
 
-const PostCard: React.FC<PostCardProps> = ({ post }) => {
-  const { title, slug, created_at_pretty, tags, feature_image } = post;
+const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
+  const { title, slug, created_at_pretty, tags, feature_image, excerpt } = post;
   return (
     <Article>
       <Container>
@@ -32,6 +35,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             <Title>{title}</Title>
             <PublishedDate>{created_at_pretty}</PublishedDate>
           </Header>
+          <ShortText>{excerpt}</ShortText>
           <TagWrapper>
             {tags.map((tag) => (
               <Tag key={tag.slug} tag={tag} />
@@ -48,4 +52,4 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
   );
 };
 
-export default PostCard;
+export default FeaturedPost;

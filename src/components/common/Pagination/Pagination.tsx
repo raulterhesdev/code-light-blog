@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { PageContext } from '../../../types';
+import {
+  StyledPagination,
+  PageNumberDisplay,
+  PaginationButton,
+} from './Pagination.styles';
 
 type PaginationType = {
   pageContext: PageContext;
 };
 
 const Pagination: React.FC<PaginationType> = ({ pageContext }) => {
+  console.log(pageContext);
   const {
     previousPagePath,
     nextPagePath,
@@ -15,27 +21,27 @@ const Pagination: React.FC<PaginationType> = ({ pageContext }) => {
   } = pageContext;
 
   return (
-    <nav role='navigation'>
-      <div>
+    <StyledPagination role='navigation'>
+      <PaginationButton>
         {previousPagePath && (
           <Link to={previousPagePath} rel='prev'>
             Previous
           </Link>
         )}
-      </div>
+      </PaginationButton>
       {numberOfPages > 1 && (
-        <div>
-          Page {humanPageNumber} of {numberOfPages}
-        </div>
+        <PageNumberDisplay>
+          {humanPageNumber}/{numberOfPages}
+        </PageNumberDisplay>
       )}
-      <div>
+      <PaginationButton>
         {nextPagePath && (
           <Link to={nextPagePath} rel='next'>
             Next
           </Link>
         )}
-      </div>
-    </nav>
+      </PaginationButton>
+    </StyledPagination>
   );
 };
 

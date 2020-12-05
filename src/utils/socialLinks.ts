@@ -14,4 +14,9 @@ export default [
     icon: '',
     to: 'www.twitter.com',
   },
+  {
+    name: 'YouTube',
+    icon: '',
+    to: 'www.youtube.com',
+  },
 ];

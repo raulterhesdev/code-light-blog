@@ -6,6 +6,7 @@ import Layout from '../components/Layout/Layout';
 import Pagination from '../components/common/Pagination/Pagination';
 import PostCard from '../components/PostCard/PostCard';
 import { Post, Location, PageContext } from '../types';
+import { Section, SectionHeader } from '../components/Home/Home.styles';
 
 type PostsProps = {
   data: {
@@ -28,12 +29,12 @@ const Posts: React.FC<PostsProps> = ({ data, location, pageContext }) => {
   return (
     <>
       <MetaData location={location} />
-      <Layout>
-        <section>
-          <h1>Posts</h1>
+      <Layout location={location}>
+        <SectionHeader>Posts</SectionHeader>
+        <Section>
           {postList}
           <Pagination pageContext={pageContext} />
-        </section>
+        </Section>
       </Layout>
     </>
   );

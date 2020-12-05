@@ -1,12 +1,22 @@
 import React from 'react';
 import Navigation from './Navigation/Navigation';
+import { StyledHeader, Logo } from './Header.styles';
+import { Link } from 'gatsby';
 
-const Header: React.FC = () => {
+type HeaderTypes = {
+  currentPath: string;
+};
+
+const Header: React.FC<HeaderTypes> = ({ currentPath }) => {
   return (
-    <header style={{ display: 'flex' }}>
-      <span>&lt;code-light /&gt;</span>
-      <Navigation />
-    </header>
+    <StyledHeader>
+      <Logo>
+        <Link to='/'>
+          &lt;code <span>light</span> /&gt;
+        </Link>
+      </Logo>
+      <Navigation currentPath={currentPath} />
+    </StyledHeader>
   );
 };
 

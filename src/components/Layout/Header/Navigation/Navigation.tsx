@@ -1,25 +1,30 @@
 import { Link } from 'gatsby';
-import React from 'react';
-
+import React, { useState } from 'react';
+import Hamburger from './Hamburger/Hamburger';
 import routes from '../../../../utils/navigationPaths';
-import socialLinks from '../../../../utils/socialLinks';
 
-const Navigation: React.FC = () => {
+import { Nav, List, MenuItem } from './Navigation.styles';
+
+type NavigationTypes = {
+  currentPath: string;
+};
+
+const Navigation: React.FC<NavigationTypes> = ({ currentPath }) => {
+  const [toggle, setToggle] = useState(false);
   return (
-    <nav style={{ display: 'flex' }}>
-      <ul>
+    <Nav>
+      <Hamburger onClick={() => setToggle((prev) => !prev)} closed={toggle} />
+      <List closed={toggle} onClick={() => setToggle((prev) => !prev)}>
         {routes.map((route) => (
-          <li key={route.title}>
+          <MenuItem
+            key={route.title}
+            isCurrentPath={`/${currentPath}` === route.path}
+          >
             <Link to={route.path}>{route.title}</Link>
-          </li>
+          </MenuItem>
         ))}
-      </ul>
-      <ul>
-        {socialLinks.map((link) => (
-          <li key={link.name}>{link.name}</li>
-        ))}
-      </ul>
-    </nav>
+      </List>
+    </Nav>
   );
 };
 

@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
 import { Post as PostType, Location } from '../types';
+import PostArticle from '../components/Post/Post';
 
 type PostProps = {
   data: {
@@ -18,22 +19,8 @@ const Post: React.FC<PostProps> = ({ data, location }) => {
   return (
     <>
       <MetaData data={data} location={location} type='article' />
-      <Layout>
-        <article>
-          {post.feature_image ? (
-            <figure>
-              <img
-                src={post.feature_image}
-                alt={post.title}
-                style={{ width: 250 }}
-              />
-            </figure>
-          ) : null}
-          <section>
-            <h1>{post.title}</h1>
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          </section>
-        </article>
+      <Layout location={location}>
+        <PostArticle post={post}></PostArticle>
       </Layout>
     </>
   );

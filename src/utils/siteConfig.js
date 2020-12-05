@@ -1,8 +1,8 @@
 module.exports = {
   siteUrl: `http://localhost:8000`, // Site domain. Do not include a trailing slash!
   postsPerPage: 4, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
-  featuredPosts: 4,
-  latestPosts: 4,
+  featuredPosts: 6,
+  latestPosts: 1,
   siteTitleMeta: `Code Light`, // This allows an alternative site title for meta data for pages.
   siteDescriptionMeta: `Code Tutorials`, // This allows an alternative site description for meta data for pages.
 

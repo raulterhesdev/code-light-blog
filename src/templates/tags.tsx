@@ -1,19 +1,17 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import MetaData from '../components/common/meta/MetaData';
 import Layout from '../components/Layout/Layout';
 import TagCard from '../components/TagCard/TagCard';
-import { Location, PageContext, Post, Tag as TagType } from '../types';
+import { Location, PageContext, Post, Tag, Tag as TagType } from '../types';
+import { Section, SectionHeader } from '../components/Home/Home.styles';
 
 type TagsProps = {
   data: {
     allGhostTag: {
       edges: {
-        node: {
-          name: string;
-          slug: string;
-        };
+        node: TagType;
       }[];
     };
   };
@@ -23,17 +21,15 @@ type TagsProps = {
 const Tags: React.FC<TagsProps> = ({ data, location }) => {
   console.log(data.allGhostTag);
   const tagList = data.allGhostTag.edges.map(({ node }) => (
-    <TagCard key={node.name} name={node.name} slug={node.slug} />
+    <TagCard key={node.name} tag={node} />
   ));
   return (
     <>
       <MetaData location={location} />
 
-      <Layout>
-        <section>
-          <h2>All tags</h2>
-          {tagList}
-        </section>
+      <Layout location={location}>
+        <SectionHeader>All tags</SectionHeader>
+        <Section>{tagList}</Section>
       </Layout>
     </>
   );
@@ -48,6 +44,7 @@ export const pageQuery = graphql`
         node {
           name
           slug
+          description
         }
       }
     }

@@ -1,17 +1,25 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { Tag } from '../../types';
+import { CtaWrapper, Description, Title, Wrapper } from './TagCard.styles';
+import Cta from '../../components/common/CTA/CTA';
 
 type TagCardProps = {
-  name: string;
-  slug: string;
+  tag: Tag;
 };
 
-const TagCard: React.FC<TagCardProps> = ({ name, slug }) => {
+export const TagCard: React.FC<TagCardProps> = ({ tag }) => {
+  console.log(tag);
+  const { name, description, slug } = tag;
+
   return (
-    <div>
-      <span>{name}</span>
-      <Link to={`/tags/${slug}`}>Go To</Link>
-    </div>
+    <Wrapper>
+      <Title>{name}</Title>
+      <Description>{description}</Description>
+      <Cta>
+        <Link to={`/tags/${slug}`}>Go to posts</Link>
+      </Cta>
+    </Wrapper>
   );
 };
 

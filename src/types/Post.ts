@@ -11,4 +11,5 @@ export type Post = {
   created_at_pretty: string;
   tags: Tag[];
   slug: string;
+  excerpt: string;
 };
