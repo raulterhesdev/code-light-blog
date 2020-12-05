@@ -48,14 +48,18 @@ const CookieConsent: React.FC = () => {
   const cookieName = 'ga-disable-G-EW4RZ6L0YM';
 
   const checkCookieName = (name: string): string => {
-    if (document) {
-      var match = document.cookie.match(
-        new RegExp('(^| )' + name + '=([^;]+)')
-      );
-      if (match) {
-        return match[2];
+    {
+      if (typeof window !== 'undefined') {
+        var match = document.cookie.match(
+          new RegExp('(^| )' + name + '=([^;]+)')
+        );
+        if (match) {
+          return match[2];
+        } else {
+          console.log('--something went wrong---');
+        }
       } else {
-        console.log('--something went wrong---');
+        return;
       }
     }
   };
@@ -63,15 +67,11 @@ const CookieConsent: React.FC = () => {
   const shouldDisplayCookieBanner = checkCookieName(cookieName);
 
   const acceptCookies = () => {
-    if (document) {
-      document.cookie = `${cookieName}=true`;
-    }
+    document.cookie = `${cookieName}=true`;
   };
 
   const refuseCookie = () => {
-    if (document) {
-      document.cookie = `${cookieName}=false`;
-    }
+    document.cookie = `${cookieName}=false`;
   };
 
   return (
