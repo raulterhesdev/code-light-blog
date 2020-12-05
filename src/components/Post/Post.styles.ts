@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Article = styled.article``;
+export const Article = styled.article`
+  background-color: ${({ theme }) => theme.white};
+`;
 
 export const ImageWrapper = styled.figure`
   width: 100%;

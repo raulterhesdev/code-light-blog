@@ -5,7 +5,8 @@ export const Wrapper = styled.article`
   justify-content: center;
   /* align-items: center; */
   padding: 32px;
-
+  /* height: 100%; */
+  background-color: ${({ theme }) => theme.white};
   @media (max-width: 1200px) {
     flex-direction: column;
     padding: 32px 16px;
