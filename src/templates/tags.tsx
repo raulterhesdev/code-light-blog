@@ -19,7 +19,6 @@ type TagsProps = {
 };
 
 const Tags: React.FC<TagsProps> = ({ data, location }) => {
-  console.log(data.allGhostTag);
   const tagList = data.allGhostTag.edges.map(({ node }) => (
     <TagCard key={node.name} tag={node} />
   ));

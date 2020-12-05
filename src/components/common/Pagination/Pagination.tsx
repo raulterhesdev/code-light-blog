@@ -12,7 +12,6 @@ type PaginationType = {
 };
 
 const Pagination: React.FC<PaginationType> = ({ pageContext }) => {
-  console.log(pageContext);
   const {
     previousPagePath,
     nextPagePath,

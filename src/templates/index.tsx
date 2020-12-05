@@ -20,7 +20,6 @@ type IndexProps = {
 
 const Index: React.FC<IndexProps> = ({ data, location }) => {
   const posts = data.allGhostPost.edges;
-  console.log(location);
   return (
     <>
       <MetaData location={location} />

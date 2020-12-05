@@ -9,7 +9,6 @@ type TagCardProps = {
 };
 
 export const TagCard: React.FC<TagCardProps> = ({ tag }) => {
-  console.log(tag);
   const { name, description, slug } = tag;
 
   return (

@@ -15,7 +15,6 @@ type PostProps = {
 
 const Post: React.FC<PostProps> = ({ data, location }) => {
   const post = data.ghostPost;
-  console.log(post);
   return (
     <>
       <MetaData data={data} location={location} type='article' />
