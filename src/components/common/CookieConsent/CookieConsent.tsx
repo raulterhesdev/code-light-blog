@@ -54,6 +54,7 @@ const CookieConsent: React.FC = () => {
           new RegExp('(^| )' + name + '=([^;]+)')
         );
         if (match) {
+          console.log(match[2]);
           return match[2];
         } else {
           console.log('--something went wrong---');
@@ -64,14 +65,16 @@ const CookieConsent: React.FC = () => {
     }
   };
 
-  const shouldDisplayCookieBanner = checkCookieName(cookieName);
+  let shouldDisplayCookieBanner: any = checkCookieName(cookieName);
 
   const acceptCookies = () => {
-    document.cookie = `${cookieName}=true`;
+    document.cookie = `${cookieName}=false`;
+    shouldDisplayCookieBanner = false;
   };
 
   const refuseCookie = () => {
-    document.cookie = `${cookieName}=false`;
+    document.cookie = `${cookieName}=true`;
+    shouldDisplayCookieBanner = false;
   };
 
   return (
