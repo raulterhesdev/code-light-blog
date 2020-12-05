@@ -4,7 +4,7 @@ export const SectionHeader = styled.h2`
   padding: 35px 25px;
   text-align: center;
   background-color: ${({ theme }) => theme.darkerGrey};
-  width: 100vw;
+  width: 100%;
   color: ${({ theme }) => theme.white};
 `;
 

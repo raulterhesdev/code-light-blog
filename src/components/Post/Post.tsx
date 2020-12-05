@@ -40,6 +40,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
     };
 
     codeBlocks.forEach((block) => {
+      //@ts-ignore
       const language = block.lastChild.classList[0].split('-')[1];
 
       const copyButton = document.createElement('span');

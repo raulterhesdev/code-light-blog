@@ -1,57 +1,100 @@
 import React from 'react';
+import styled from 'styled-components';
 
-// const checkCookieName = (name: string): string => {
-//   var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-//   if (match) {
-//     return match[2];
-//   } else {
-//     console.log('--something went wrong---');
-//   }
-// };
+const Wrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: ${({ theme }) => theme.darkerGrey};
+  padding: 12px;
+  color: ${({ theme }) => theme.white};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+
+  p {
+    a {
+      color: ${({ theme }) => theme.primary};
+      text-decoration-color: ${({ theme }) => theme.primary};
+    }
+  }
+`;
+
+const AcceptButton = styled.button`
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  background-color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.white};
+  cursor: pointer;
+  margin-top: 12px;
+`;
+
+const DeclineButton = styled.button`
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  background-color: transparent;
+  color: ${({ theme }) => theme.lighterGrey};
+  cursor: pointer;
+`;
 
 const CookieConsent: React.FC = () => {
-  // check if this cookie exists ga-disable-G-EW4RZ6L0YM
-  // if not display the banner and ask the user to agree
-  // find some link to cookie policy to display
   const cookieName = 'ga-disable-G-EW4RZ6L0YM';
 
   const checkCookieName = (name: string): string => {
-    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    if (match) {
-      return match[2];
-    } else {
-      console.log('--something went wrong---');
+    if (document) {
+      var match = document.cookie.match(
+        new RegExp('(^| )' + name + '=([^;]+)')
+      );
+      if (match) {
+        return match[2];
+      } else {
+        console.log('--something went wrong---');
+      }
     }
   };
 
   const shouldDisplayCookieBanner = checkCookieName(cookieName);
 
   const acceptCookies = () => {
-    document.cookie = `${cookieName}=true`;
+    if (document) {
+      document.cookie = `${cookieName}=true`;
+    }
   };
 
   const refuseCookie = () => {
-    document.cookie = `${cookieName}=false`;
+    if (document) {
+      document.cookie = `${cookieName}=false`;
+    }
   };
 
   return (
     <>
       {!shouldDisplayCookieBanner && (
-        <div>
+        <Wrapper>
           <p>
-          We use cookies to offer you our service. By continuing to use this site you consent to our use of cookies as described in our 
+            This website would like to use cookies to analytics purposes. Your
+            personal information is completely private as described{' '}
             <a
-              href='https://www.privacypolicygenerator.info/live.php?token=fmI710Fh4qMnzbhFRcHsinGLOhNXT60G'
+              href='https://www.cookiepolicygenerator.com/live.php?token=Vw9A1YQeK9nSwXdNw2Ot1h4zei7kpCY4'
               rel='noopener'
               target='_blank'
             >
-              policy
+              here
             </a>
             .
           </p>
-          <button onClick={acceptCookies}>Accept</button>
-          <button onClick={refuseCookie}>Decline</button>
-        </div>
+          <div>
+            <AcceptButton onClick={acceptCookies}>Accept</AcceptButton>
+            <DeclineButton onClick={refuseCookie}>Decline</DeclineButton>
+          </div>
+        </Wrapper>
       )}
     </>
   );
