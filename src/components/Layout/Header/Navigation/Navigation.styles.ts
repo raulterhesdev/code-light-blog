@@ -8,7 +8,7 @@ export const List = styled.ul`
   transition: all 0.5s ease-in;
 
   @media (max-width: 768px) {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 80vw;
@@ -20,6 +20,7 @@ export const List = styled.ul`
     justify-content: center;
     background-color: ${({ theme }) => theme.darkerGrey};
     box-shadow: 8px 0 8px #00000029;
+    z-index: 200;
   }
 `;
 
