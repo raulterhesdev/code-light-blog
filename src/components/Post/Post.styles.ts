@@ -86,7 +86,7 @@ export const ArticleBody = styled.section`
   }
 
   p {
-    padding: 6px 0;
+    padding: 6px 3px;
     font-size: 1rem;
   }
 
