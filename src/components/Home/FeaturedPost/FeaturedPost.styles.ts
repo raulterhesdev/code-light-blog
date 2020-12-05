@@ -4,7 +4,7 @@ export const Article = styled.article`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 24px 0;
+  margin: 0 8px 24px 8px;
 `;
 
 export const Container = styled.div`
