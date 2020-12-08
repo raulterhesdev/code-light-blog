@@ -49,6 +49,7 @@ const CookieConsent: React.FC = () => {
     false
   );
   const cookieName = 'ga-disable-G-EW4RZ6L0YM';
+  const yearsToExpire = 5; // 5 years for the cookie to expire
 
   const checkCookieName = (name: string): string => {
     {
@@ -71,13 +72,22 @@ const CookieConsent: React.FC = () => {
     checkCookieName(cookieName);
   }, []);
 
+  const calculateExpirationDate = (years) => {
+    var d = new Date();
+    d.setTime(d.getTime() + years * 365 * 24 * 60 * 60 * 1000);
+    var expires = 'expires=' + d.toUTCString();
+    return expires;
+  };
+
   const acceptCookies = () => {
-    document.cookie = `${cookieName}=false`;
+    const expires = calculateExpirationDate(yearsToExpire);
+    document.cookie = `${cookieName}=false;${expires}`;
     setShouldDisplayCookieBanner(false);
   };
 
   const refuseCookie = () => {
-    document.cookie = `${cookieName}=true`;
+    const expires = calculateExpirationDate(yearsToExpire);
+    document.cookie = `${cookieName}=true;${expires}`;
     setShouldDisplayCookieBanner(false);
   };
 
