@@ -42,6 +42,7 @@ const Layout: React.FC<LayoutTypes> = ({ children, location }) => {
           href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap'
           rel='stylesheet'
         />
+        <script src='https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst'></script>
       </Helmet>
 
       <GlobalStyle />

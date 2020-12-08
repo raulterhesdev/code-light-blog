@@ -156,7 +156,7 @@ export const ArticleBody = styled.section`
 
   pre {
     border: 1px solid ${({ theme }) => theme.primaryDark};
-    background-color: ${({ theme }) => theme.darkerGrey};
+    background-color: black;
     color: ${({ theme }) => theme.white};
     padding: 40px 8px 16px 8px;
     position: relative;
@@ -189,4 +189,15 @@ export const ArticleBody = styled.section`
     padding: 8px 0;
     margin-left: 32px;
   }
+`;
+
+export const CopyNotice = styled.div`
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background-color: ${({ theme }) => theme.darkGrey};
+  color: ${({ theme }) => theme.white};
+  border-radius: 20px;
 `;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Post as PostType } from '../../types';
 import Tag from '../Tag/Tag';
 
@@ -11,6 +11,7 @@ import {
   ArticleBody,
   Date,
   TagWrapper,
+  CopyNotice,
 } from './Post.styles';
 
 type PostProps = {
@@ -18,6 +19,8 @@ type PostProps = {
 };
 
 const Post: React.FC<PostProps> = ({ post }) => {
+  const [showCopyNotice, setShowCopyNotice] = useState(false);
+
   useEffect(() => {
     const articleLinks = document.querySelectorAll('#main-article a');
     articleLinks.forEach((link) => {
@@ -37,6 +40,10 @@ const Post: React.FC<PostProps> = ({ post }) => {
       elem.select();
       document.execCommand('copy');
       document.body.removeChild(elem);
+      setShowCopyNotice(true);
+      setTimeout(() => {
+        setShowCopyNotice(false);
+      }, 2000);
     };
 
     codeBlocks.forEach((block) => {
@@ -60,8 +67,15 @@ const Post: React.FC<PostProps> = ({ post }) => {
     };
   }, []);
 
+  useEffect(() => {
+    const codeBlocks = document.querySelectorAll('#main-article pre code');
+
+    codeBlocks.forEach((block) => block.classList.add('prettyprint'));
+  }, []);
+
   return (
     <Article>
+      {showCopyNotice && <CopyNotice>Copied to clipboard</CopyNotice>}
       {post.feature_image ? (
         <ImageWrapper>
           <Image src={post.feature_image} alt={post.title} />
