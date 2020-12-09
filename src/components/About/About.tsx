@@ -27,31 +27,44 @@ const About: React.FC<AboutProps> = () => {
             >
               Toluna
             </a>
-            . My hobbies are reading, listening to music, traveling and
-            photography.
+            . My hobbies are reading (Favorite Books: The Silmarillion by J.R.R.
+            Tolkien & Sapiens by Yuval Noah Harari), listening to music,
+            traveling and photography.
           </p>
           <h2>Why I'm doing this?</h2>
           <p>
             Over the years I found that the best way to know you really
-            understand a topic is to explain it to somebody else. This may sound
+            understand a topic is to teach it to somebody else. This may sound
             like a cliche but for me it always seemed to work. Whenever I had to
             explain something, everything I didn't know about the subject would
             come out and I could research it better.
           </p>
           <p>
-            This is my journey in becoming better at my the things I am most
-            passionate about.
+            This is my journey to become a better developer. I will give it my
+            best shot of explaining and writing about as many different subjects
+            that I am passionate about.
           </p>
           <h2>What are you posting about?</h2>
           <p>Everything web development!</p>
           <p>
             Basically I love learning new things and improving already existing
             skills. So my goal is to create guides, tutorials and articles to
-            help other develop their skills alongside me
+            help others develop their skills alongside me.
+          </p>
+          <p>
+            For suggestions, article ideas or just chat about random development
+            stuff hit me up on{' '}
+            <a
+              href='https://twitter.com/raulbterhes'
+              target='blank'
+              rel='_noopener _noreferrer'
+            >
+              Twitter
+            </a>
           </p>
         </Section>
         <ImageWrapper>
-          <img src={portrait}></img>
+          <img src={portrait} alt='Portrait'></img>
         </ImageWrapper>
       </Wrapper>
     </>
