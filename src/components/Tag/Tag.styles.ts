@@ -6,7 +6,7 @@ export const StyledTag = styled.span`
     font-size: 0.8rem;
     background-color: ${({ theme }) => theme.darkGrey};
     color: ${({ theme }) => theme.white};
-    padding: 8px;
+    padding: 8px 12px;
     margin: 0 4px;
     border-radius: 12px;
 
@@ -14,7 +14,7 @@ export const StyledTag = styled.span`
     padding: 4px 8px;
 
     &:hover {
-      background-color: ${({ theme }) => theme.primary};
+      background-color: ${({ theme }) => theme.darkerGrey};
     }
   }
 `;

@@ -43,7 +43,9 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
           </TagWrapper>
           <CtaWrapper>
             <CTA>
-              <Link to={`/posts/${slug}`}>Read More</Link>
+              <Link to={`/posts/${slug}`}>
+                <span>&rarr;</span> Read More
+              </Link>
             </CTA>
           </CtaWrapper>
         </div>

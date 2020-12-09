@@ -38,10 +38,10 @@ export const SubscribeButton = styled.button`
 
   font-size: 1.2rem;
   color: ${({ theme }) => theme.white};
-  background-color: ${({ theme }) => theme.primaryLight};
+  background-color: ${({ theme }) => theme.primary};
   border: none;
 
   &:hover {
-    background-color: ${({ theme }) => theme.primary};
+    background-color: ${({ theme }) => theme.primaryDark};
   }
 `;

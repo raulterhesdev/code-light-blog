@@ -34,6 +34,7 @@ export const Title = styled.h1`
 
 export const Date = styled.p`
   color: #333;
+  padding-left: 2px;
 `;
 
 export const TagWrapper = styled.div`
@@ -100,7 +101,7 @@ export const ArticleBody = styled.section`
 
   a {
     color: ${({ theme }) => theme.black};
-    border-bottom: 2px solid ${({ theme }) => theme.primary};
+    border-bottom: 3px solid ${({ theme }) => theme.primary};
     text-decoration: none;
   }
 
@@ -180,7 +181,7 @@ export const ArticleBody = styled.section`
       width: 100%;
       padding: 8px 12px;
 
-      color: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.primaryLight};
     }
   }
 

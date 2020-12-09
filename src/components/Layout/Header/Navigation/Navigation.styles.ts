@@ -30,17 +30,13 @@ export const MenuItem = styled.li`
   a {
     padding: 14px 24px;
     text-decoration: none;
-    color: ${({ isCurrentPath, theme }) =>
-      isCurrentPath ? theme.primaryLight : theme.white};
+    color: ${({ theme }) => theme.white};
     border-bottom: 2px solid
       ${({ isCurrentPath, theme }) =>
         isCurrentPath ? theme.primaryLight : 'transparent'};
 
     &:hover {
-      color: ${({ theme }) => theme.primary};
-      border-bottom: 2px solid
-        ${({ isCurrentPath, theme }) =>
-          isCurrentPath ? theme.primary : 'transparent'};
+      border-bottom: 2px solid ${({ theme }) => theme.primary};
     }
   }
 
