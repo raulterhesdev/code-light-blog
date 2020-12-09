@@ -21,7 +21,7 @@ type MetaDataTypes = {
 };
 
 const MetaData: React.FC<MetaDataTypes> = ({ data = {}, location }) => {
-  const canonical: string = url.resolve(config.siteUrl, location.pathname);
+  const canonical: string = 'https://raulterhes.com';
   const { ghostPost, ghostTag } = data;
   let title: string;
   let description: string;
