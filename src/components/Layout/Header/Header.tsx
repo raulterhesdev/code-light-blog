@@ -12,7 +12,7 @@ const Header: React.FC<HeaderTypes> = ({ currentPath }) => {
     <StyledHeader>
       <Logo>
         <Link to='/'>
-          &lt;code <span>light</span> /&gt;
+          &lt;<span> Raul Terhes </span>/&gt;
         </Link>
       </Logo>
       <Navigation currentPath={currentPath} />
