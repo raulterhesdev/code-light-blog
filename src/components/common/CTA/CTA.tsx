@@ -7,12 +7,24 @@ const StyledCTA = styled.span`
     padding: 12px 18px;
     text-decoration: none;
     font-size: 1.2rem;
-    color: ${({ theme }) => theme.white};
-    background-color: ${({ theme }) => theme.primaryLight};
-    box-shadow: 0 4px 8px #00000029;
+    color: ${({ theme }) => theme.black};
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: 10px;
+      left: -4px;
+      transition: all 0.3s ease-in;
+    }
 
     &:hover {
-      background-color: ${({ theme }) => theme.primary};
+      padding: 12px 10px 12px 26px;
+
+      span {
+        left: 4px;
+      }
     }
 
     &:active {
