@@ -3,7 +3,7 @@ import { Post } from '../../types';
 import PostCard from '../PostCard/PostCard';
 import FeaturedPost from './FeaturedPost/FeaturedPost';
 import { Link } from 'gatsby';
-import { SectionHeader, Section, Cta } from './Home.styles';
+import { SectionHeader, Section } from './Home.styles';
 import siteConfig from '../../utils/siteConfig';
 
 type HomeProps = {

@@ -6,6 +6,11 @@ export const SectionHeader = styled.h2`
   background-color: ${({ theme }) => theme.darkerGrey};
   width: 100%;
   color: ${({ theme }) => theme.white};
+
+  p {
+    padding-top: 12px;
+    font-size: 1rem;
+  }
 `;
 
 export const Section = styled.section`
