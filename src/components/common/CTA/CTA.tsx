@@ -24,6 +24,7 @@ const StyledCTA = styled.span`
 
       span {
         left: 4px;
+        color: ${({ theme }) => theme.primaryDark};
       }
     }
 
