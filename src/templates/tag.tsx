@@ -35,8 +35,10 @@ const Tag: React.FC<TagProps> = ({ data, location, pageContext }) => {
 
       <Layout location={location}>
         <header>
-          <SectionHeader>{tag.name}</SectionHeader>
-          {tag.description ? <p>{tag.description}</p> : null}
+          <SectionHeader>
+            {tag.name}
+            {tag.description ? <p>{tag.description}</p> : null}
+          </SectionHeader>
         </header>
         <Section>
           {postList}
