@@ -16,6 +16,8 @@ export const Wrapper = styled.article`
 export const Section = styled.section`
   max-width: 900px;
   padding: 0 24px;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
 
   @media (max-width: 1200px) {
     padding: 0;
@@ -35,12 +37,9 @@ export const Section = styled.section`
     font-size: 1rem;
 
     a {
-      color: ${({ theme }) => theme.primary};
-      text-decoration-color: ${({ theme }) => theme.primary};
-    }
-    a:visited {
-      color: ${({ theme }) => theme.primaryDark};
-      text-decoration-color: ${({ theme }) => theme.primaryDark};
+      color: ${({ theme }) => theme.black};
+      border-bottom: 3px solid ${({ theme }) => theme.primary};
+      text-decoration: none;
     }
   }
 `;
