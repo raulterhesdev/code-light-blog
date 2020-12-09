@@ -16,7 +16,9 @@ export const TagCard: React.FC<TagCardProps> = ({ tag }) => {
       <Title>{name}</Title>
       <Description>{description}</Description>
       <Cta>
-        <Link to={`/tags/${slug}`}>Go to posts</Link>
+        <Link to={`/tags/${slug}`}>
+          <span>&rarr;</span> Go to posts
+        </Link>
       </Cta>
     </Wrapper>
   );
