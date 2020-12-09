@@ -22,6 +22,7 @@ export const Section = styled.section`
   }
 
   @media (min-width: 1280px) {
+    margin: 12px auto;
     display: grid;
     grid-template-columns: 600px 600px;
     grid-gap: 24px;

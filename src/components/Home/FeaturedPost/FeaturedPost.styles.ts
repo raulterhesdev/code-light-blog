@@ -4,12 +4,12 @@ export const Article = styled.article`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 8px 24px 8px;
+  margin: 24px 8px;
 `;
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.white};
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   box-shadow: 2px 4px 4px #00000029;
 `;
 
@@ -31,6 +31,8 @@ export const ImageWrapper = styled.figure`
   width: 100%;
   max-width: 800px;
   margin-bottom: 8px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
 `;
 
 export const Image = styled.img`

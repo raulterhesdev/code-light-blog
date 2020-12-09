@@ -7,13 +7,13 @@ export const Article = styled.article`
   width: 100%;
 
   @media (max-width: 1280px) {
-    margin-bottom: 24px;
+    margin: 12px 0;
   }
 `;
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.white};
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   box-shadow: 2px 4px 4px #00000029;
 `;
 
@@ -34,6 +34,8 @@ export const Title = styled.h1`
 export const ImageWrapper = styled.figure`
   width: 100%;
   margin-bottom: 8px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
 `;
 
 export const Image = styled.img`
