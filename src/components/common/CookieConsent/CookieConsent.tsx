@@ -8,14 +8,13 @@ const Wrapper = styled.div`
   width: 100%;
   z-index: 1000;
   background-color: ${({ theme }) => theme.darkerGrey};
-  padding: 12px;
+  padding: 24px 16px;
   color: ${({ theme }) => theme.white};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  margin-bottom: 8px;
 
   p {
     a {
@@ -32,7 +31,7 @@ const AcceptButton = styled.button`
   background-color: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.white};
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 24px;
 `;
 
 const DeclineButton = styled.button`
@@ -96,10 +95,10 @@ const CookieConsent: React.FC = () => {
       {shouldDisplayCookieBanner && (
         <Wrapper>
           <p>
-            This website would like to use cookies to analytics purposes. Your
-            personal information is completely private as described{' '}
+            This website would like to use cookies for analytics purposes. Check
+            our policy{' '}
             <a
-              href='https://www.cookiepolicygenerator.com/live.php?token=Vw9A1YQeK9nSwXdNw2Ot1h4zei7kpCY4'
+              href='https://www.cookiepolicygenerator.com/live.php?token=ft1uOV5NCRSIMsUoHdeFvy7bsTelnmID'
               rel='noopener'
               target='_blank'
             >
