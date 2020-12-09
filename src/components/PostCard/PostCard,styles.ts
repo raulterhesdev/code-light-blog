@@ -15,6 +15,11 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.white};
   border-radius: 8px;
   box-shadow: 2px 4px 4px #00000029;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    box-shadow: 2px 4px 4px #00000000;
+  }
 `;
 
 export const Header = styled.div`

@@ -34,6 +34,7 @@ export const MenuItem = styled.li`
     border-bottom: 2px solid
       ${({ isCurrentPath, theme }) =>
         isCurrentPath ? theme.primaryLight : 'transparent'};
+    transition: all 0.2s ease-in;
 
     &:hover {
       border-bottom: 2px solid ${({ theme }) => theme.primary};

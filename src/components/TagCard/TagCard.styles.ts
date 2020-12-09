@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.white};
   margin: 0 0 16px 0;
   padding: 32px 12px;
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
   box-shadow: 2px 4px 4px #00000029;
   width: 100%;
   color: ${({ theme }) => theme.black};
