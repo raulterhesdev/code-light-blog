@@ -9,6 +9,8 @@ export type Post = {
   primaryAuthor: { name: string };
   created_at: string;
   created_at_pretty: string;
+  published_at_pretty: string;
+  reading_time: number;
   tags: Tag[];
   slug: string;
   excerpt: string;
