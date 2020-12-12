@@ -95,8 +95,9 @@ export const ArticleBody = styled.section`
   blockquote {
     font-size: 1.1rem;
     padding: 12px 20px;
-    border-left: 4px solid ${({ theme }) => theme.darkGrey};
-    border-right: 4px solid ${({ theme }) => theme.darkGrey};
+    border-radius: 5px;
+    border-left: 4px solid ${({ theme }) => theme.primaryLight};
+    border-right: 4px solid ${({ theme }) => theme.primaryLight};
   }
 
   a {
