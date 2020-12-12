@@ -83,7 +83,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       ) : null}
       <MainSection>
         <Title>{post.title}</Title>
-        <Date>{post.created_at_pretty}</Date>
+        <Date>{post.published_at_pretty}</Date>
         <TagWrapper>
           {post.tags.map((tag) => (
             <Tag key={tag.slug} tag={tag} />
