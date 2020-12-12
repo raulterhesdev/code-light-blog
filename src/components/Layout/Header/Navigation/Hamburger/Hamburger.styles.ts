@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledHamburger = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 500;
+  padding: 14px;
   span {
     display: block;
     width: 25px;
