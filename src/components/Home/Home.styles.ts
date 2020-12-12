@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SectionHeader = styled.h2`
   padding: 35px 25px;
   text-align: center;
-  background-color: ${({ theme }) => theme.darkerGrey};
+  background-color: ${({ theme }) => theme.darkGrey};
   width: 100%;
   color: ${({ theme }) => theme.white};
 
