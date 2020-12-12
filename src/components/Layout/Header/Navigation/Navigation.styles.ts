@@ -11,7 +11,7 @@ export const List = styled.ul`
     position: fixed;
     top: 0;
     left: 0;
-    width: 80vw;
+    width: 100vw;
     transform: translateX(${({ closed }) => (closed ? '0' : '-100vw')});
     height: 100vh;
     background-color: white;
@@ -43,5 +43,18 @@ export const MenuItem = styled.li`
 
   @media (max-width: 768px) {
     margin-bottom: 4px;
+  }
+`;
+
+export const SocialWrapper = styled.div`
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
