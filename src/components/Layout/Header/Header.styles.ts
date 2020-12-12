@@ -5,7 +5,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 2px 24px;
-  background-color: ${({ theme }) => theme.darkGrey};
+  background-color: ${({ theme }) => theme.darkerGrey};
 `;
 
 export const Logo = styled.span`
@@ -18,5 +18,9 @@ export const Logo = styled.span`
     span {
       color: ${({ theme }) => theme.accent};
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 0;
   }
 `;
