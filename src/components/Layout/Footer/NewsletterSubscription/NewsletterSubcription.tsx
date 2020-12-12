@@ -5,6 +5,8 @@ import {
   Input,
   Error,
   SubscribeButton,
+  Message,
+  Paragraph,
 } from './NewsletterSubscription.styles';
 
 const NewsletterSubscription: React.FC = () => {
@@ -39,7 +41,10 @@ const NewsletterSubscription: React.FC = () => {
 
   return (
     <Form onSubmit={subscribe}>
-      {error ? <Error>{error}</Error> : null}
+      <Message>Subscribe to the newsletter!</Message>
+      <Paragraph>
+        You will be the first one notified when a new post is up!
+      </Paragraph>
       <Input
         type='text'
         placeholder='Email...'
@@ -48,6 +53,7 @@ const NewsletterSubscription: React.FC = () => {
           setEmail(e.currentTarget.value)
         }
       />
+      {error ? <Error>{error}</Error> : null}
       <SubscribeButton type='submit'>Subscribe to newsletter!</SubscribeButton>
     </Form>
   );

@@ -9,6 +9,18 @@ export const Form = styled.form`
   padding: 45px 0;
 `;
 
+export const Message = styled.h2`
+  color: ${({ theme }) => theme.white};
+  padding: 16px 20px;
+  text-align: center;
+`;
+
+export const Paragraph = styled.h3`
+  color: ${({ theme }) => theme.white};
+  padding: 0 20px 16px 20px;
+  text-align: center;
+`;
+
 export const Input = styled.input`
   padding: 16px 20px;
   font-size: 1rem;
@@ -36,12 +48,14 @@ export const SubscribeButton = styled.button`
   min-width: 300px;
   max-width: 450px;
 
-  font-size: 1.2rem;
-  color: ${({ theme }) => theme.white};
-  background-color: ${({ theme }) => theme.primary};
+  font-size: 1.3rem;
+  letter-spacing: 1.3;
+  color: ${({ theme }) => theme.darkerGrey};
+  background-color: ${({ theme }) => theme.primaryLight};
   border: none;
 
   &:hover {
-    background-color: ${({ theme }) => theme.primaryDark};
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.black};
   }
 `;
