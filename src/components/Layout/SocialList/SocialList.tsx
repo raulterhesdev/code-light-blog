@@ -1,6 +1,7 @@
 import React from 'react';
 import socialLinks from '../../../utils/socialLinks';
 import styled from 'styled-components';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 export const StyledSocialList = styled.ul`
   list-style: none;
@@ -43,10 +44,14 @@ const SocialList: React.FC<SocialListProps> = ({ smallWidthIcon }) => {
     <StyledSocialList>
       {socialLinks.map((link) => (
         <SocialLink key={link.name} smallWidthIcon={smallWidthIcon}>
-          <a href={link.to} target='_blank' rel='noopener noreferrer'>
+          <OutboundLink
+            href={link.to}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <img src={link.icon} alt='' />
             {/* {link.name} */}
-          </a>
+          </OutboundLink>
         </SocialLink>
       ))}
     </StyledSocialList>
