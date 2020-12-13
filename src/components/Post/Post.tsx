@@ -74,8 +74,9 @@ const Post: React.FC<PostProps> = ({ post }) => {
   }, []);
 
   useEffect(() => {
-    //@ts-ignore
-    window.gtag('event', `${post.title} - start`);
+    typeof window !== 'undefined' &&
+      //@ts-ignore
+      window.gtag('event', `${post.title} - start`);
 
     const getScrollValues = () => {
       const pageHeight = document.body.scrollHeight;
@@ -87,8 +88,9 @@ const Post: React.FC<PostProps> = ({ post }) => {
     const scrollHandler = () => {
       const [pageHeight, currentScrollPoint] = getScrollValues();
       if (currentScrollPoint >= pageHeight) {
-        // @ts-ignore
-        window.gtag('event', `${post.title} - finish`);
+        typeof window !== 'undefined' &&
+          // @ts-ignore
+          window.gtag('event', `${post.title} - finish`);
       }
     };
 
