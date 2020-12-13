@@ -2,7 +2,6 @@ import React from 'react';
 import { Post } from '../../types';
 import PostCard from '../PostCard/PostCard';
 import FeaturedPost from './FeaturedPost/FeaturedPost';
-import { Link } from 'gatsby';
 import { SectionHeader, Section } from './Home.styles';
 import siteConfig from '../../utils/siteConfig';
 
@@ -29,7 +28,6 @@ const Home: React.FC<HomeProps> = ({ posts }) => {
     <>
       <SectionHeader>Latest post</SectionHeader>
       {latestsPost}
-
       {featuredPosts.length > 0 && (
         <>
           <SectionHeader>Other posts you might be interested in</SectionHeader>

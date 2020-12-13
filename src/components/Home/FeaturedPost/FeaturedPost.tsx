@@ -23,7 +23,14 @@ type FeaturedPostProps = {
 };
 
 const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
-  const { title, slug, created_at_pretty, tags, feature_image, excerpt } = post;
+  const {
+    title,
+    slug,
+    published_at_pretty,
+    tags,
+    feature_image,
+    excerpt,
+  } = post;
   return (
     <Article>
       <Container>
@@ -33,7 +40,7 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
         <div>
           <Header>
             <Title>{title}</Title>
-            <PublishedDate>{created_at_pretty}</PublishedDate>
+            <PublishedDate>{published_at_pretty}</PublishedDate>
           </Header>
           <ShortText>{excerpt}</ShortText>
           <TagWrapper>

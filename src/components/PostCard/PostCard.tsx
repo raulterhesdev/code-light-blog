@@ -20,7 +20,7 @@ type PostCardProps = {
 };
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
-  const { title, slug, created_at_pretty, tags, feature_image } = post;
+  const { title, slug, published_at_pretty, tags, feature_image } = post;
   return (
     <Article>
       <Container>
@@ -30,7 +30,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
         <div>
           <Header>
             <Title>{title}</Title>
-            <PublishedDate>{created_at_pretty}</PublishedDate>
+            <PublishedDate>{published_at_pretty}</PublishedDate>
           </Header>
           <TagWrapper>
             {tags.map((tag) => (

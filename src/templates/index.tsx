@@ -32,7 +32,6 @@ const Index: React.FC<IndexProps> = ({ data, location }) => {
 
 export default Index;
 
-// TODO: Filter the featured posts here instead of in the component
 export const pageQuery = graphql`
   query GhostFeaturedQuery {
     allGhostPost(sort: { order: DESC, fields: [published_at] }) {

@@ -3,9 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.article`
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   padding: 32px;
-  /* height: 100%; */
   background-color: ${({ theme }) => theme.white};
   @media (max-width: 1200px) {
     flex-direction: column;

@@ -4,10 +4,7 @@ import portrait from '../../images/portrait.jpg';
 import { SectionHeader } from '../Home/Home.styles';
 import { ImageWrapper, Section, Wrapper } from './About.styles';
 
-type AboutProps = {
-  data: any;
-};
-const About: React.FC<AboutProps> = () => {
+const About: React.FC = () => {
   return (
     <>
       <SectionHeader>About me</SectionHeader>
