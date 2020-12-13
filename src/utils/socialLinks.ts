@@ -8,26 +8,26 @@ export default [
   {
     name: 'Facebook',
     icon: facebookIcon,
-    to: 'https://facebook.com',
+    to: 'https://www.facebook.com/raulterhesdev/',
   },
   {
     name: 'Github',
     icon: githubIcon,
-    to: 'https://github.com',
+    to: 'https://github.com/raulterhesdev',
   },
   {
     name: 'Twitter',
     icon: twitterIcon,
-    to: 'https://twitter.com',
+    to: 'https://twitter.com/raulbterhes',
   },
   {
     name: 'YouTube',
     icon: youtubeIcon,
-    to: 'https://youtube.com',
+    to: 'https://www.youtube.com/channel/UCoVUm2qtKLpNC3q8GpExfYw',
   },
   {
     name: 'LinkedIn',
     icon: linkedinIcon,
-    to: 'https://linkedin.com',
+    to: 'https://www.linkedin.com/in/raul-bogdan-terhe%C8%99-36a550149/',
   },
 ];
