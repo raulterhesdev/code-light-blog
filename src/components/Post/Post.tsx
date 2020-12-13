@@ -73,6 +73,31 @@ const Post: React.FC<PostProps> = ({ post }) => {
     codeBlocks.forEach((block) => block.classList.add('prettyprint'));
   }, []);
 
+  useEffect(() => {
+    //@ts-ignore
+    window.gtag('event', `${post.title} - start`);
+
+    const getScrollValues = () => {
+      const pageHeight = document.body.scrollHeight;
+      const currentScrollPoint = window.scrollY + window.innerHeight;
+
+      return [pageHeight, currentScrollPoint];
+    };
+
+    const scrollHandler = () => {
+      const [pageHeight, currentScrollPoint] = getScrollValues();
+      if (currentScrollPoint >= pageHeight) {
+        // @ts-ignore
+        window.gtag('event', `${post.title} - finish`);
+      }
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
+
   return (
     <Article>
       {showCopyNotice && <CopyNotice>Copied to clipboard</CopyNotice>}
