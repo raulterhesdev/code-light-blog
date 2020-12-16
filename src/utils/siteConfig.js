@@ -1,6 +1,6 @@
 module.exports = {
   siteUrl: `http://localhost:8000`, // Site domain. Do not include a trailing slash!
-  postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
+  postsPerPage: 32, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
   featuredPosts: 6,
   latestPosts: 1,
   siteTitleMeta: `Raul Terhes`, // This allows an alternative site title for meta data for pages.
