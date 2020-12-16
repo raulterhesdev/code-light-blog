@@ -43,7 +43,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const indexTemplate = path.resolve(`./src/templates/index.tsx`);
   const postsTemplate = path.resolve(`./src/templates/posts.tsx`);
   const tagsTemplate = path.resolve(`./src/templates/tag.tsx`);
-  const allTagsTemplate = path.resolve(`./src/templates/tags.tsx`);
   const postTemplate = path.resolve(`./src/templates/post.tsx`);
 
   // Create tag pages
@@ -111,12 +110,6 @@ exports.createPages = async ({ graphql, actions }) => {
     path: '/',
     component: indexTemplate,
     items: posts,
-  });
-
-  createPage({
-    path: '/tags',
-    component: allTagsTemplate,
-    items: tags,
   });
 
   // Create pagination
