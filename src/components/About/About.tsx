@@ -7,7 +7,6 @@ import { ImageWrapper, Section, Wrapper } from './About.styles';
 const About: React.FC = () => {
   return (
     <>
-      <SectionHeader>About me</SectionHeader>
       <Wrapper>
         <Section>
           <h2>Who am I?</h2>

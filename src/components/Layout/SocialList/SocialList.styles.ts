@@ -16,6 +16,7 @@ export const SocialLink = styled.li`
 
   a {
     img {
+      max-width: 40px;
       width: ${({ smallWidthIcon }) => (smallWidthIcon ? '10vw' : '40px')};
       filter: invert(47%) sepia(98%) saturate(383%) hue-rotate(140deg)
         brightness(99%) contrast(88%);

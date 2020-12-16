@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledTag = styled.span`
   padding: 8px 0px;
   a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     background-color: ${({ theme }) => theme.darkGrey};
     color: ${({ theme }) => theme.white};
     padding: 8px 12px;

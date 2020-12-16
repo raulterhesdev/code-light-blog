@@ -34,7 +34,7 @@ export const Title = styled.h1`
 
 export const ImageWrapper = styled.figure`
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   margin-bottom: 8px;
   border-radius: 8px 8px 0 0;
   overflow: hidden;
@@ -48,6 +48,10 @@ export const ShortText = styled.p`
   max-width: 600px;
   margin-top: 4px;
   padding-left: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
 
 export const TagWrapper = styled.div`

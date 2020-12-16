@@ -11,8 +11,4 @@ export default [
     title: 'Posts',
     path: '/posts',
   },
-  {
-    title: 'Tags',
-    path: '/tags',
-  },
 ];

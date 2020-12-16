@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Nav = styled.nav``;
+export const Nav = styled.nav`
+  padding: 1px;
+`;
 
 export const List = styled.ul`
   list-style: none;
@@ -42,13 +44,13 @@ export const MenuItem = styled.li`
   }
 
   @media (max-width: 768px) {
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
 `;
 
 export const SocialWrapper = styled.div`
   position: absolute;
-  bottom: 16px;
+  bottom: 64px;
   left: 0;
   width: 100%;
   display: flex;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.article`
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   padding: 32px;

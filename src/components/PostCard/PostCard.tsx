@@ -10,6 +10,7 @@ import {
   Header,
   PublishedDate,
   TagWrapper,
+  ShortText,
 } from './PostCard,styles';
 import Tag from '../Tag/Tag';
 import { CtaWrapper } from '../Home/FeaturedPost/FeaturedPost.styles';
@@ -20,7 +21,14 @@ type PostCardProps = {
 };
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
-  const { title, slug, published_at_pretty, tags, feature_image } = post;
+  const {
+    title,
+    slug,
+    published_at_pretty,
+    tags,
+    feature_image,
+    excerpt,
+  } = post;
   return (
     <Article>
       <Container>
@@ -32,6 +40,7 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
             <Title>{title}</Title>
             <PublishedDate>{published_at_pretty}</PublishedDate>
           </Header>
+          <ShortText>{excerpt}</ShortText>
           <TagWrapper>
             {tags.map((tag) => (
               <Tag key={tag.slug} tag={tag} />

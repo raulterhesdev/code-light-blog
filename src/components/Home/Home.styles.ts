@@ -19,7 +19,7 @@ export const Section = styled.section`
   align-items: center;
   justify-content: center;
   width: 80%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
 
   @media (max-width: 550px) {
@@ -29,7 +29,7 @@ export const Section = styled.section`
   @media (min-width: 1280px) {
     margin: 12px auto;
     display: grid;
-    grid-template-columns: 600px 600px;
+    grid-template-columns: 400px 400px 400px;
     grid-gap: 24px;
 
     align-items: initial;

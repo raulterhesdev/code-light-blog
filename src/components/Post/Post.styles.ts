@@ -43,42 +43,23 @@ export const TagWrapper = styled.div`
 `;
 
 export const ArticleBody = styled.section`
+  margin-top: 12px;
   line-height: 1.5;
-  letter-spacing: 0.8px;
+  /* letter-spacing: 0.px; */
   h2 {
-    font-size: 1.7rem;
-    padding: 4px 8px;
+    font-size: 1.8rem;
+    padding: 2px 8px;
     /* border-left: 4px solid ${({ theme }) => theme.primary}; */
-    margin: 24px 0 8px 0;
+    margin: 24px 0 2px 0;
     position: relative;
   }
 
   h3 {
     font-size: 1.4rem;
     padding: 4px 8px;
-    margin: 16px 0 8px 24px;
+    margin: 8px 0 0 0;
     position: relative;
     /* border-left: 2px solid ${({ theme }) => theme.primary}; */
-  }
-
-  h2::before,
-  h3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    height: 4px;
-    border-radius: 2px;
-  }
-  h2::before {
-    width: 45px;
-    background-color: ${({ theme }) => theme.darkGrey};
-  }
-
-  h3::before {
-    width: 24px;
-    background-color: ${({ theme }) => theme.darkGrey};
   }
 
   strong {
@@ -88,16 +69,17 @@ export const ArticleBody = styled.section`
   }
 
   p {
-    padding: 6px 8px;
+    padding: 2px 8px;
     font-size: 1rem;
   }
 
   blockquote {
     font-size: 1.1rem;
+    margin: 4px 0;
     padding: 12px 20px;
-    border-radius: 5px;
-    border-left: 4px solid ${({ theme }) => theme.primaryLight};
-    border-right: 4px solid ${({ theme }) => theme.primaryLight};
+    border-radius: 6px;
+    border-left: 5px solid ${({ theme }) => theme.primaryLight};
+    border-right: 5px solid ${({ theme }) => theme.primaryLight};
   }
 
   a {
@@ -157,6 +139,7 @@ export const ArticleBody = styled.section`
   }
 
   pre {
+    margin: 10px 0 16px 0;
     border: 1px solid ${({ theme }) => theme.primaryDark};
     background-color: black;
     color: ${({ theme }) => theme.white};
@@ -165,14 +148,24 @@ export const ArticleBody = styled.section`
     overflow-x: auto;
 
     code {
+      font-size: 0.8rem;
     }
 
     .copy-button {
       position: absolute;
       top: 0;
       right: 0;
-      padding: 8px;
+      padding: 4px 12px;
       cursor: pointer;
+      opacity: 0;
+      transition: all 0.2s linear;
+      background-color: ${({ theme }) => theme.darkGrey};
+      border-radius: 8px;
+      margin: 8px;
+
+      @media (max-width: 768px) {
+        opacity: 1;
+      }
     }
 
     .language-sign {
@@ -184,12 +177,18 @@ export const ArticleBody = styled.section`
 
       color: ${({ theme }) => theme.primaryLight};
     }
+
+    &:hover {
+      .copy-button {
+        opacity: 1;
+      }
+    }
   }
 
   ul,
   ol {
     padding: 8px 0;
-    margin-left: 32px;
+    margin-left: 8px;
   }
 `;
 

@@ -30,7 +30,6 @@ const Posts: React.FC<PostsProps> = ({ data, location, pageContext }) => {
     <>
       <MetaData location={location} />
       <Layout location={location}>
-        <SectionHeader>Posts</SectionHeader>
         <Section>
           {postList}
           <Pagination pageContext={pageContext} />

@@ -36,7 +36,7 @@ const Tag: React.FC<TagProps> = ({ data, location, pageContext }) => {
       <Layout location={location}>
         <header>
           <SectionHeader>
-            {tag.name}
+            Tag: {tag.name}
             {tag.description ? <p>{tag.description}</p> : null}
           </SectionHeader>
         </header>

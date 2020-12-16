@@ -47,6 +47,15 @@ export const Image = styled.img`
   width: 100%;
 `;
 
+export const ShortText = styled.p`
+  padding: 0 12px;
+  margin-top: 4px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+`;
+
 export const TagWrapper = styled.div`
   padding: 8px 12px;
   display: flex;
