@@ -53,15 +53,15 @@ const CookieConsent: React.FC = () => {
       {shouldDisplayCookieBanner && (
         <Wrapper>
           <p>
-            This website would like to use cookies for analytics purposes. Check
-            our policy{' '}
+            This website uses cookies to provide you the best experience. Check
+            the{' '}
             <a
               href='https://www.cookiepolicygenerator.com/live.php?token=ft1uOV5NCRSIMsUoHdeFvy7bsTelnmID'
               rel='noopener'
               target='_blank'
             >
-              here
-            </a>
+              cookie policy
+            </a>{' '}
             .
           </p>
           <div>
