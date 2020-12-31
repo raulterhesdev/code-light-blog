@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
 
 export const Logo = styled.span`
   padding: 12px 16px;
+  font-family: 'Montserrat Alternates', sans-serif;
 
   a {
     text-decoration: none;
