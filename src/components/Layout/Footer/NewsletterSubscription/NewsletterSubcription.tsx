@@ -43,7 +43,7 @@ const NewsletterSubscription: React.FC = () => {
     <Form onSubmit={subscribe}>
       <Message>Subscribe to the newsletter!</Message>
       <Paragraph>
-        You will be the first one notified when a new post is up!
+        You will receive periodical emails with new released articles!
       </Paragraph>
       <Input
         type='text'
