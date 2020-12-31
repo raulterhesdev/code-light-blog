@@ -1,6 +1,6 @@
 import facebookIcon from '../images/facebook.svg';
 import githubIcon from '../images/github.svg';
-import linkedinIcon from '../images/linkedin.svg';
+// import linkedinIcon from '../images/linkedin.svg';
 import twitterIcon from '../images/twitter.svg';
 import youtubeIcon from '../images/youtube.svg';
 
@@ -25,9 +25,9 @@ export default [
     icon: youtubeIcon,
     to: 'https://www.youtube.com/channel/UCoVUm2qtKLpNC3q8GpExfYw',
   },
-  {
-    name: 'LinkedIn',
-    icon: linkedinIcon,
-    to: 'https://www.linkedin.com/in/raul-bogdan-terhe%C8%99-36a550149/',
-  },
+  // {
+  //   name: 'LinkedIn',
+  //   icon: linkedinIcon,
+  //   to: 'https://www.linkedin.com/in/raul-bogdan-terhe%C8%99-36a550149/',
+  // },
 ];
