@@ -23,7 +23,7 @@ export default [
   {
     name: 'YouTube',
     icon: youtubeIcon,
-    to: 'https://www.youtube.com/channel/UCoVUm2qtKLpNC3q8GpExfYw',
+    to: 'https://www.youtube.com/channel/UCuE9oRyg4spY8W0z6eqhBrg',
   },
   // {
   //   name: 'LinkedIn',
