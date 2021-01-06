@@ -6,6 +6,7 @@ export const Main = styled.main`
   background-color: ${({ theme }) => theme.lighterGrey};
   min-height: 90vh;
   @media (max-width: 900px) {
+    justify-content: flex-start;
     flex-direction: column;
   }
 `;

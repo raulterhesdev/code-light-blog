@@ -12,6 +12,7 @@ export const Container = styled.div`
   border-radius: 8px;
   box-shadow: 2px 4px 4px #00000029;
   transition: all 0.2s ease-in;
+  max-width: 700px;
 
   &:hover {
     box-shadow: 2px 4px 4px #00000000;
