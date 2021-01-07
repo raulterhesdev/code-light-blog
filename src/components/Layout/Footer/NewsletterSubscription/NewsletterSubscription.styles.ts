@@ -59,3 +59,16 @@ export const SubscribeButton = styled.button`
     color: ${({ theme }) => theme.black};
   }
 `;
+
+export const Notice = styled.div`
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 32px;
+  font-size: 26px;
+  z-index: 1000;
+  background-color: ${({ theme }) => theme.primaryDark};
+  color: ${({ theme }) => theme.white};
+  border-radius: 12px;
+`;

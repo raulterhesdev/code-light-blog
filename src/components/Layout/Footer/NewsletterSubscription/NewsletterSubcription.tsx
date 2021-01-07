@@ -7,11 +7,13 @@ import {
   SubscribeButton,
   Message,
   Paragraph,
+  Notice,
 } from './NewsletterSubscription.styles';
 
 const NewsletterSubscription: React.FC = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState<string>(null);
+  const [showSubscribeSuccess, setShowSubscribeSuccess] = useState(false);
 
   const validateEmail = () => {
     if (
@@ -29,6 +31,10 @@ const NewsletterSubscription: React.FC = () => {
     if (validateEmail()) {
       try {
         await addToMailchimp(email);
+        setShowSubscribeSuccess(true);
+        setTimeout(() => {
+          setShowSubscribeSuccess(false);
+        }, 3000);
       } catch (_) {
         setError(
           'There was a problem with the subscription. Please try again later!'
@@ -41,6 +47,7 @@ const NewsletterSubscription: React.FC = () => {
 
   return (
     <Form onSubmit={subscribe}>
+      {showSubscribeSuccess && <Notice>Thank you for subscribing!</Notice>}
       <Message>Subscribe to the newsletter!</Message>
       <Paragraph>
         You will receive periodical emails with new released articles!
